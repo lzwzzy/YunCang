@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuncang.dao.user.UserDao">
+
+    <select id="loginCheck" resultType="UserEntity">
+        SELECT userid
+          FROM user
+        WHERE username=#{username}
+          AND password=#{password}
+    </select>
+
+    <insert id="insertUser" parameterType="UserEntity">
+        INSERT INTO user(username,password,phone,sex)
+        VALUES(#{username},#{password},#{phone},#{sex})
+    </insert>
+
+    <select id="isExist"  resultType="int">
+        SELECT userid
+        FROM user
+        WHERE username=#{username}
+        or password=#{password}
+    </select>
+</mapper>
