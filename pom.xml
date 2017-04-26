@@ -140,8 +140,27 @@
       <artifactId>spring-test</artifactId>
       <version>4.3.7.RELEASE</version>
     </dependency>
+
+
+    <!-- jquery依赖 -->
+    <dependency>
+      <groupId>org.webjars.bower</groupId>
+      <artifactId>jquery</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>YunCang</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

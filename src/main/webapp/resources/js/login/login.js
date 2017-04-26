@@ -62,7 +62,11 @@ var login = {
             login.formcheck();
             //登陆验证
             $('#loginBtn').click(function () {
-
+                var username = $('#username').val();
+                var password = $('#password').val();
+                //判断输入框是否为空
+                if ((username.trim()!=null || username.trim()!="" || username!=undefined)
+                    && (password.trim()!=null || password.trim()!="" || password!=undefined)){
                     //向服务器发送ajax请求
                     $.post(login.URL.dologin(), {
                         username: $('#username').val(),
@@ -78,16 +82,20 @@ var login = {
                             $('#username').val("");
                             $('#password').val("");
                             /*
-                            **延时消失提示1
-                            setTimeout(function () {
-                                $('#fail').hide(300);
-                            },2000)
-                            */
+                             **延时消失提示1
+                             setTimeout(function () {
+                             $('#fail').hide(300);
+                             },2000)
+                             */
                             //延时消失提示2
                             $('#fail').delay(2000).hide(300);
 
                         }
                     });
+                }else {
+                    //如果为空，直接刷新
+                    window.location.reload();
+                }
 
             });
 

@@ -65,35 +65,20 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> param = new HashMap<String, Object>();
         String username = userEntity.getUsername();
         long phone = userEntity.getPhone();
-        if (username != null && !username.equals("")) {
-            param.put("username", username);
-            try {
-                int exist = userDao.isExist(param);
-                if (exist != 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (Exception e) {
-                logger.error(e.getMessage(), e);
+        param.put("phone",phone);
+        param.put("username", username);
+        try {
+            int exist = userDao.isExist(param);
+            //如果返回数据不为0，说明数据已存在,返回true
+            if (exist != 0) {
+                return true;
+            } else {
                 return false;
             }
-        } else {
-
-            try {
-                param.put("phone", phone);
-                int exist = userDao.isExist(param);
-                if (exist != 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (Exception e) {
-                logger.error(e.getMessage(), e);
-                return false;
-            }
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return false;
         }
-
 
     }
 

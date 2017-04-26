@@ -62,24 +62,30 @@ public class CommonController {
 
     /**
      * 用户注册
-     * @param request
+     * @param user
      * @return
      */
     @RequestMapping(value = "/doregister",method = RequestMethod.POST)
-    public String doRegister(HttpServletRequest request){
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        long phone = Long.valueOf(request.getParameter("phone"));
-        UserEntity user = new UserEntity();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setPhone(phone);
+    @ResponseBody
+    public Result<Boolean> doRegister(UserEntity user){
         int state = service.insertUser(user);
-        if (state==1){
-            return "redirect:/yuncang/login";
+        if (user ==null){
+            return new Result<Boolean>(false);
+        }else {
+            //如果返回为1，证明插入成功
+            if (state == 1){
+                return new Result<Boolean>(true);
+            }else{
+                return new Result<Boolean>(false);
+            }
         }
-        return "/login/register";
     }
+
+    /**
+     * 判断用户手机号和用户名是否存在
+     * @param userEntity
+     * @return
+     */
     @RequestMapping(value = "/isExit" ,method = RequestMethod.GET)
     @ResponseBody
     public Map<String,Object> isExist(UserEntity userEntity){
