@@ -2,7 +2,7 @@
  * Created by lzw on 2017/4/23.
  */
 var t = 3;
-var register={
+var register = {
     URL: {
         isExist: function () {
             return '/yuncang/isExit';
@@ -86,7 +86,7 @@ var register={
                             max: 11,
                             message: '请输入11位手机号码'
                         },
-                        remote:{
+                        remote: {
                             //每2秒向服务器发送一次请求，判断手机号是否存在
                             url: register.URL.isExist(),
                             type: 'GET',
@@ -113,12 +113,12 @@ var register={
     //延时操作
     showTime: function () {
         document.getElementById('sec').innerText = t;
-        if(--t===0){
+        if (--t === 0) {
             //计时为0时跳转到登陆界面
-            window.location.href= register.URL.login();
+            window.location.href = register.URL.login();
         }
     },
-    submit:{
+    submit: {
         init: function () {
 
             //表单验证
@@ -131,28 +131,28 @@ var register={
                 var password = $('#password').val();
                 var repassword = $('#password_confirm').val();
                 var successModel = $('#successModal');
-               if (phone.trim()!=0 && username.trim()!="" && password.trim()!="" && repassword!=""){
-                   //发送ajax请求
-                   $.post(register.URL.doregister(),{
-                       //参数
-                       username: username,
-                       phone: phone,
-                       password: password
-                   },function (result) {
-                       console.log('result:'+result);//TODO
-                       if (result && result['success']){
-                           //显示注册成功提示弹窗
-                           successModel.modal({
-                               show: true,//显示弹出层
-                               backdrop: 'static',//禁止位置关闭
-                               keyboard: false//关闭键盘事件
-                           });
-                           //并且在3秒后跳转到登陆页面
-                           //每秒执行一次,showTime()
-                           window.setInterval("register.showTime()",1000);
-                       }
-                   });
-               }
+                if (phone.trim() != 0 && username.trim() != "" && password.trim() != "" && repassword != "") {
+                    //发送ajax请求
+                    $.post(register.URL.doregister(), {
+                        //参数
+                        username: username,
+                        phone: phone,
+                        password: password
+                    }, function (result) {
+                        console.log('result:' + result);//TODO
+                        if (result && result['success']) {
+                            //显示注册成功提示弹窗
+                            successModel.modal({
+                                show: true,//显示弹出层
+                                backdrop: 'static',//禁止位置关闭
+                                keyboard: false//关闭键盘事件
+                            });
+                            //并且在3秒后跳转到登陆页面
+                            //每秒执行一次,showTime()
+                            window.setInterval("register.showTime()", 1000);
+                        }
+                    });
+                }
             });
         }
     }

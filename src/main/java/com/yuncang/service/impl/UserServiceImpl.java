@@ -1,5 +1,8 @@
 package com.yuncang.service.impl;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import com.github.miemiedev.mybatis.paginator.domain.Paginator;
 import com.yuncang.dao.user.UserDao;
 import com.yuncang.entity.UserEntity;
 import com.yuncang.service.UserService;
@@ -9,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -65,7 +69,7 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> param = new HashMap<String, Object>();
         String username = userEntity.getUsername();
         long phone = userEntity.getPhone();
-        param.put("phone",phone);
+        param.put("phone", phone);
         param.put("username", username);
         try {
             int exist = userDao.isExist(param);
@@ -80,6 +84,17 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+    }
+
+    @Override
+    public Map<String, Object> queryAll(PageBounds pageBounds) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<UserEntity> userlists = userDao.queryAll(pageBounds);
+        PageList pageList = (PageList) userlists;
+        Paginator paginator = pageList.getPaginator();
+        map.put("userlists",userlists);
+        map.put("paginator",paginator);
+        return map;
     }
 
 

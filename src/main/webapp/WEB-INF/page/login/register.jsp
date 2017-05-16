@@ -114,7 +114,7 @@
         </div>
     </div>
 </div>
-<%-- Model2 --%>
+<%-- Model2 注册成功弹出框--%>
 <div id="successModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">

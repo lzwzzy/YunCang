@@ -49,7 +49,8 @@
         <property name="basePackage" value="com.yuncang.dao"/>
     </bean>
 
-    <!-- RedisDao -->
+
+    <!-- RedisDao 缓存-->
     <!--<bean id="redisDao" class="com.seckill.dao.cache.RedisDao">-->
         <!--<constructor-arg index="0" value="localhost"/>-->
         <!--<constructor-arg index="1" value="6379"/>-->

@@ -59,14 +59,17 @@ var login = {
     },
     check: {
         init: function () {
+
             login.formcheck();
+            //如果cookie中有用户信息就可直接访问主页
+            //TODO
             //登陆验证
             $('#loginBtn').click(function () {
                 var username = $('#username').val();
                 var password = $('#password').val();
                 //判断输入框是否为空
-                if ((username.trim()!=null || username.trim()!="" || username!=undefined)
-                    && (password.trim()!=null || password.trim()!="" || password!=undefined)){
+                if ((username.trim() != null || username != "" || username.trim() != undefined)
+                    && (password.trim() != null || password != "" || password.trim() != undefined)) {
                     //向服务器发送ajax请求
                     $.post(login.URL.dologin(), {
                         username: $('#username').val(),
@@ -92,7 +95,7 @@ var login = {
 
                         }
                     });
-                }else {
+                } else {
                     //如果为空，直接刷新
                     window.location.reload();
                 }
