@@ -50,12 +50,12 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li><a href="/index.html"><span class="glyphicon glyphicon-dashboard"></span> 起始页</a></li>
-        <li><a href="/widgets.html"><span class="glyphicon glyphicon-th"></span> 采购</a></li>
-        <li class="active"><a href="/charts.html"><span class="glyphicon glyphicon-stats"></span> 销售</a></li>
-        <li><a href="/tables.html"><span class="glyphicon glyphicon-list-alt"></span> 仓库</a></li>
-        <li><a href="/forms.html"><span class="glyphicon glyphicon-pencil"></span> 资金</a></li>
-        <li><a href="/panels.html"><span class="glyphicon glyphicon-info-sign"></span> 报表 &amp; Panels</a></li>
+        <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
+        <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
+        <li class="active"><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
+        <li><a href="/yuncang/goods"><span class="glyphicon glyphicon-folder-close"></span> 仓库</a></li>
+        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
                 <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>

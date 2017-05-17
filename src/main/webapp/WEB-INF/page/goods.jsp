@@ -22,6 +22,7 @@
     <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.css" rel="stylesheet">
     <%-- 行内编辑 --%>
     <link href="https://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -58,19 +59,35 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li><a href="/yuncang/index"><span class="glyphicon glyphicon-dashboard"></span> 起始页</a></li>
-        <li><a href="/widgets.html"><span class="glyphicon glyphicon-th"></span> 采购</a></li>
-        <li><a href="/charts.html"><span class="glyphicon glyphicon-stats"></span> 销售</a></li>
-        <li class="active"><a href="/tables.html"><span class="glyphicon glyphicon-list-alt"></span> 仓库</a></li>
-        <li><a href="/forms.html"><span class="glyphicon glyphicon-pencil"></span> 资金</a></li>
-        <li><a href="/panels.html"><span class="glyphicon glyphicon-info-sign"></span> 报表 &amp; Panels</a></li>
+        <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
+        <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
+        <li><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
+        <li class="parent"><a href="#"><span class="glyphicon glyphicon-folder-close"></span> 仓库<span data-toggle="collapse" href="#sub-item-1"
+                                                                                                      class="icon pull-right"><em
+                class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
+
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="/yuncang/goods">
+                        <span class="glyphicon glyphicon-share-alt"></span> 商品管理
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="/yuncang/proffer">
+                        <span class="glyphicon glyphicon-share-alt"></span> 供货商管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
+                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-2"
                                                                               class="icon pull-right"><em
                     class="glyphicon glyphicon-s glyphicon-plus"></em></span>
             </a>
-            <ul class="children collapse" id="sub-item-1">
+            <ul class="children collapse" id="sub-item-2">
                 <li>
                     <a class="" href="#">
                         <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
@@ -106,7 +123,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">商品管理</h1>
+            <h2 class="page-header">商品管理</h2>
         </div>
     </div><!--/.row-->
 
@@ -123,7 +140,7 @@
                         <button id="btn_edit" type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
                         </button>
-                        <button id="btn_delete" type="button" class="btn btn-default">
+                        <button id="btn_delete" type="button" class="btn btn-default" disabled>
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
                         </button>
                     </div>
@@ -142,7 +159,7 @@
                     <h4 class="modal-title">新增商品</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="add_form">
                         <div class="form-group">
                             <label for="goodsName" class="col-sm-2 control-label">商品名称:</label>
                             <div class="col-sm-6">
@@ -204,31 +221,16 @@
                             </div>
                         </div>
                     </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="btn_submit"  >添加</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" id="btn_submit" value="添加"/>
-                </div>
+
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <%-- 状态弹出框 --%>
-    <div id="windows_state" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
-         aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title">提示</h3>
-                </div>
-                <div class="modal-body">
-                    添加成功!
-                </div>
-            </div>
-        </div>
-    </div>
 </div><!--/.main-->
 
 

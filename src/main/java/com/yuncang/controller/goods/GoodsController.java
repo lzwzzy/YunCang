@@ -1,7 +1,5 @@
 package com.yuncang.controller.goods;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yuncang.dto.PageForBootstrap;
 import com.yuncang.dto.Result;
 import com.yuncang.entity.GoodsBill;
@@ -10,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +24,7 @@ public class GoodsController {
 
     @RequestMapping(value = "/goods")
     public String buy() {
-        return "manage";
+        return "goods";
     }
 
 
@@ -134,6 +130,7 @@ public class GoodsController {
      */
     @ResponseBody
     @RequestMapping(value = "/deleteGoodsInfo",method = RequestMethod.POST)
+    //此方法用来接收前端传来的数组@RequestParam(value = "goodsIdList[]",required = false) List goodsIdList
     public Result deleteGoodsInfo(@RequestParam(value = "goodsIdList[]",required = false) List goodsIdList){
         try {
             boolean isSuccess = goodsService.deleteGoodsInfo(goodsIdList);

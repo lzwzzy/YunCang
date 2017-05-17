@@ -26,10 +26,10 @@ var goods = {
         }
     },
     //表单验证
-    formcheck: function (submit) {
-        $('form').bootstrapValidator({
+    formcheck: function () {
+        $('#add_form').bootstrapValidator({
             message: 'This value is not valid',
-            //当验证未通过时，提交按钮不可选
+            //live: 'disabled',
             feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
@@ -65,14 +65,6 @@ var goods = {
                             message: '库存必须是非负整数'
                         }
                     }
-                },
-                rmarks: {
-                    validators: {
-                        stringLength: {
-                            max: 300,
-                            message: '不能超过300字'
-                        }
-                    }
                 }
             }
         });
@@ -86,52 +78,126 @@ var goods = {
         var proffer = $('#proffer').val();
         var state = $('#state').val();
         var remarks = $('#remark').val();
-        //发送请求
-        $.post(goods.URL.insertGoodsInfo(), {
-            name: name,
-            type: type,
-            price: price,
-            stock: stock,
-            proffer: proffer,
-            state: state,
-            remarks: remarks
-        }, function (result) {
-            if (result && result['success']) {
-                //添加成功后隐藏弹出框
-                $('#add').modal('hide');
-                //弹出提示
-                $('#windows_state').modal('show');
-                setTimeout(function () {
-                    $('#windows_state').modal('hide');
-                }, 1200);//1.2秒后消失
-                //刷新表格
-                $('#table').bootstrapTable('refresh');
-            } else {
-                alert('添加失败');
-            }
-        });
+        //获取表单验证对象
+        var bootstrapValidator = $("#add_form").data('bootstrapValidator');
+        //执行验证
+        bootstrapValidator.validate();
+        //如果验证通过...
+        if (bootstrapValidator.isValid()) {
+            //发送请求(表单异步提交,防止界面出现较大抖动)
+            $.post(goods.URL.insertGoodsInfo(), {
+                name: name,
+                type: type,
+                price: price,
+                stock: stock,
+                proffer: proffer,
+                state: state,
+                remarks: remarks
+            }, function (result) {
+                if (result && result['success']) {
+                    //添加成功后隐藏弹出框
+                    $('#add').modal('hide');
+                    //弹出提示
+                    var jc = $.dialog({
+                        icon: 'glyphicon glyphicon-ok-sign',
+                        title: '提示',
+                        content: '新增成功',
+                        type: 'green',
+                        onContentReady: function () {
+                            setTimeout(function () {
+                                jc.close();
+                            }, 1000);//1秒后消失
+                        }
+                    });
+                    //刷新表格
+                    setTimeout(function () {
+                        $('#table').bootstrapTable('refresh');
+                    }, 2000);
+                    //重置表单
+                    bootstrapValidator.resetForm(true);
+                } else {
+                    //弹出提示
+                    var jc2 = $.dialog({
+                        icon: 'glyphicon glyphicon-remove-sign',
+                        title: '提示',
+                        content: '新增失败',
+                        type: 'orange',
+                        onContentReady: function () {
+                            setTimeout(function () {
+                                jc2.close();
+                            }, 1000);//1秒后消失
+                        }
+                    });
+                }
+            });
+        }//Endif
+
 
     },
     //删除按钮被按下逻辑
     deleteBtnOncliced: function () {
+        //获取被选中列信息
         var seleced = $('#table').bootstrapTable('getSelections');
         var goodsIdList = [];
+        //提取每行id值,并存放在数组中
         for (var i = 0; i < seleced.length; i++) {
             goodsIdList[i] = seleced[i]['goodsId'];
         }
-        console.log(goodsIdList);
-        //TODO 提示是否删除
-        $.post(goods.URL.deleteGoodsInfo(), {
-            goodsIdList: goodsIdList
-        }, function (result) {
-            if (result && result['success']){
-                alert("删除成功");
-                //刷新表格
-                $('#table').bootstrapTable('refresh');
-            }else {
-                alert(result['errorinfo']);
+        //提示是否删除
+        $.confirm({
+            icon: 'glyphicon glyphicon-warning-sign',
+            title: '警告',
+            content: '确定要删除吗?',
+            type: 'red',
+            theme: 'dark',
+            buttons: {
+                ok: {
+                    text: '确定(Y)',
+                    keys: ['Y'],
+                    action: function () {
+                        //发送删除请求
+                        $.post(goods.URL.deleteGoodsInfo(), {
+                            goodsIdList: goodsIdList
+                        }, function (result) {
+                            if (result && result['success']) {
+                                //弹出提示
+                                var jc1 = $.dialog({
+                                    icon: 'glyphicon glyphicon-ok-sign',
+                                    title: '提示',
+                                    content: '删除成功',
+                                    type: 'green',
+                                    onContentReady: function () {
+                                        setTimeout(function () {
+                                            jc1.close();
+                                        }, 1000);//1秒后消失
+                                    }
+                                });
+                                //刷新表格
+                                $('#table').bootstrapTable('refresh');
+                            } else {
+                                //弹出提示
+                                var jc2 = $.dialog({
+                                    icon: 'glyphicon glyphicon-remove-sign',
+                                    title: '提示',
+                                    content: '删除失败',
+                                    type: 'orange',
+                                    onContentReady: function () {
+                                        setTimeout(function () {
+                                            jc2.close();
+                                        }, 1000);//1秒后消失
+                                    }
+                                });
+                            }
+                        });
+                    }
+                },
+                cancel: {
+                    text: '取消(N)',
+                    keys: ['N']
+                }
             }
         });
+
     },
     //初始化
     loadTable: {
@@ -141,7 +207,7 @@ var goods = {
                 sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
                 sortOrder: "desc",                  //排序方式
                 sortName: 'goods_id',               //排序列
-                toolbar: '#toolbar',
+                toolbar: '#toolbar',                //工具栏
                 pageNumber: 1,                      //初始化加载第一页，默认第一页
                 pageSize: 10,                       //每页的记录行数（*）
                 pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
@@ -168,9 +234,30 @@ var goods = {
                         field: field
                     }, function (result) {
                         if (result && result['success']) {
-                            alert("修改成功");
+                            //弹出提示
+                            var jc1 = $.dialog({
+                                icon: 'glyphicon glyphicon-ok-sign',
+                                title: '提示',
+                                content: '修改成功',
+                                type: 'green',
+                                onContentReady: function () {
+                                    setTimeout(function () {
+                                        jc1.close();
+                                    }, 1000);//1秒后消失
+                                }
+                            });
                         } else {
-                            alert("修改失败");
+                            var jc2 = $.dialog({
+                                icon: 'glyphicon glyphicon-remove-sign',
+                                title: '提示',
+                                content: '修改失败',
+                                type: 'orange',
+                                onContentReady: function () {
+                                    setTimeout(function () {
+                                        jc2.close();
+                                    }, 1000);//1秒后消失
+                                }
+                            });
                             //刷新表格
                             $('#table').bootstrapTable('refresh');
                         }
@@ -287,19 +374,31 @@ var goods = {
                 //添加界面表单验证
                 goods.formcheck();
             });
-
             //添加界面提交按钮被按下
             $('#btn_submit').click(function () {
                 //按下后逻辑
                 goods.addFormSubmit();
             });
 
+            //当没有checkbox被选中时,删除按钮不可选
+            $('#table').on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
+                $('#btn_delete').prop('disabled', !$('#table').bootstrapTable('getSelections').length);
+            });
             //删除按钮被按下
             $('#btn_delete').click(function () {
                 //按下后逻辑
                 goods.deleteBtnOncliced();
+                $('#btn_delete').prop('disabled', true);
+            });
+            //修改按钮被按下
+            $('#btn_edit').click(function () {
+                $.alert({
+                    icon: 'glyphicon glyphicon-info-sign',
+                    title: '提示',
+                    content: '请移步行内修改(表格中带有虚下划线的都可以修改)',
+                    type: 'purple'
+                });
             })
-
         }
     }
 

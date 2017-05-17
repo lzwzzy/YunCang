@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="<%=rootPath%>/resources/js/common/chart.min.js"></script>
 <script src="<%=rootPath%>/resources/js/common/chart-data.js"></script>
