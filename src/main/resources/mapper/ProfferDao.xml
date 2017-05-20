@@ -4,8 +4,90 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yuncang.dao.proffer.ProfferDao">
 
-    <select id="queryAll" resultType="ProfferBill">
-      SELECT *
-      FROM profferbill
+    <!-- 查询全部信息,根据搜索条件 -->
+    <select id="queryAllProffer" resultType="ProfferBill">
+        SELECT proffered_id,
+        proffered_name,
+        main_business,
+        contact_person,
+        contact_phone,
+        proffered_fax,
+        proffered_address,
+        remarks
+        FROM profferbill
+        <where>
+            <if test="searchText!=null and searchText != ''">
+                proffered_name LIKE '%${searchText}%'
+                or contact_person LIKE '%${searchText}%'
+            </if>
+        </where>
     </select>
+    <!-- 插入信息 -->
+    <insert id="insertIntoProfferBill">
+        INSERT INTO profferbill(
+
+        proffered_name,
+        contact_person,
+        contact_phone,
+        remarks,
+        main_business,
+        proffered_address,
+        proffered_fax
+        )
+        VALUES (
+
+        #{profferedName},
+        #{contactPerson},
+        #{contactPhone},
+        #{remarks},
+        #{mainBusiness},
+        #{profferedAddress},
+        #{profferedFax}
+        )
+    </insert>
+
+    <!-- 更新数据 -->
+    <update id="updateProfferBill" parameterType="ProfferBill">
+        UPDATE profferbill
+        <set>
+            <if test="field=='profferedName'.toString">
+                proffered_name=#{profferBill.profferedName}
+            </if>
+            <if test="field=='mainBusiness'.toString">
+                main_business=#{profferBill.mainBusiness}
+            </if>
+            <if test="field=='contactPerson'.toString">
+                contact_person=#{profferBill.contactPerson}
+            </if>
+            <if test="field=='contactPhone'.toString">
+                contact_phone=#{profferBill.contactPhone}
+            </if>
+            <if test="field=='profferedFax'.toString">
+                proffered_fax=#{profferBill.profferedFax}
+            </if>
+            <if test="field=='profferedAddress'.toString">
+                proffered_address=#{profferBill.profferedAddress}
+            </if>
+            <if test="field=='remarks'.toString">
+                remarks=#{profferBill.remarks}
+            </if>
+        </set>
+        WHERE proffered_id=#{profferBill.profferedId}
+    </update>
+
+    <!-- 删除信息 -->
+    <delete id="deleteProfferBill">
+        DELETE
+        FROM profferbill
+        WHERE proffered_id
+        IN
+        <!-- -collection:参数别名,如果没有则为list或array
+        -item:迭代的参数名,可以自定名称
+        -open:进入循环前的符号
+        -separator:迭代时的分隔符
+        -close:结束循环时的符号 -->
+        <foreach collection="list" item="profferId" open="(" separator="," close=")">
+            #{profferId}
+        </foreach>
+    </delete>
 </mapper>

@@ -1,6 +1,5 @@
 package com.yuncang.dao.proffer;
 
-import com.yuncang.entity.ProfferBill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ public class ProfferDaoTest {
 
     @Test
     public void queryAll() throws Exception {
-        ProfferBill profferBill = profferDao.queryAll();
-        System.out.println(profferBill);
+//        ProfferBill profferBill = profferDao.queryAllProffer();
+//        System.out.println(profferBill);
     }
 
 }

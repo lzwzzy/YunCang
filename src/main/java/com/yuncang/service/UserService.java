@@ -36,5 +36,4 @@ public interface UserService {
      */
     boolean isExist(UserEntity userEntity);
 
-    Map<String,Object> queryAll(PageBounds pageBounds);
 }

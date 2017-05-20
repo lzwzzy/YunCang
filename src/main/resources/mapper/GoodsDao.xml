@@ -5,29 +5,29 @@
 <mapper namespace="com.yuncang.dao.goods.GoodsDao">
     <!-- 查询商品全部信息,提供商品名称和供货商的模糊查询，返回结果携带供货商信息 -->
     <select id="queryAllGoodsWithProffer" resultType="GoodsBill">
-      SELECT goods.goods_id,
-             goods.goods_name,
-             goods.goods_price,
-             goods.goods_stock,
-             goods.proffered_id,
-             goods.create_time,
-             goods.remarks,
-             goods.goods_type,
-             goods.state,
-             pro.proffered_id "profferbill.proffered_id",
-             pro.proffered_name "profferbill.proffered_name",
-             pro.contact_person "profferbill.contact_person",
-             pro.contact_phone "profferbill.contact_phone",
-             pro.remarks "profferbill.remarks"
-      FROM goodsbill AS goods
-      INNER JOIN profferbill AS pro
-      ON goods.proffered_id = pro.proffered_id
-      <where>
-          <if test="searchText!=null and searchText != ''">
-              goods_name like '%${searchText}%'
-              or proffered_name like '%${searchText}%'
-          </if>
-      </where>
+        SELECT goods.goods_id,
+        goods.goods_name,
+        goods.goods_price,
+        goods.goods_stock,
+        goods.proffered_id,
+        goods.create_time,
+        goods.remarks,
+        goods.goods_type,
+        goods.state,
+        pro.proffered_id "profferbill.proffered_id",
+        pro.proffered_name "profferbill.proffered_name",
+        pro.contact_person "profferbill.contact_person",
+        pro.contact_phone "profferbill.contact_phone",
+        pro.remarks "profferbill.remarks"
+        FROM goodsbill AS goods
+        INNER JOIN profferbill AS pro
+        ON goods.proffered_id = pro.proffered_id
+        <where>
+            <if test="searchText!=null and searchText != ''">
+                goods_name like '%${searchText}%'
+                or proffered_name like '%${searchText}%'
+            </if>
+        </where>
     </select>
 
     <!-- 插入数据 -->

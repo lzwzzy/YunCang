@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%
@@ -9,14 +8,15 @@
 <head>
     <title>Lumino - Dashboard</title>
     <%-- 静态包含 --%>
-    <%@include file="/WEB-INF/page/common/head.jsp"%>
+    <%@include file="/WEB-INF/page/common/head.jsp" %>
 </head>
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -25,7 +25,8 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
@@ -52,7 +53,9 @@
         <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
+                                                                              class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
@@ -75,7 +78,8 @@
         <li role="presentation" class="divider"></li>
         <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
     </ul>
-    <div class="attribution">More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+    <div class="attribution">More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> -
+        Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -92,7 +96,7 @@
         </div>
     </div><!--/.row-->
 
-    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
 
     <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-3">
@@ -167,7 +171,7 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>New Orders</h4>
-                    <div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span>
+                    <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
                     </div>
                 </div>
             </div>
@@ -176,7 +180,8 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Comments</h4>
-                    <div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span>
+                    <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span
+                            class="percent">65%</span>
                     </div>
                 </div>
             </div>
@@ -185,7 +190,7 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>New Users</h4>
-                    <div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span>
+                    <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span>
                     </div>
                 </div>
             </div>
@@ -194,7 +199,7 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Visitors</h4>
-                    <div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
+                    <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span>
                     </div>
                 </div>
             </div>
@@ -210,40 +215,51 @@
                     <ul>
                         <li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    <strong class="primary-font">John Doe</strong>
+                                    <small class="text-muted">32 mins ago</small>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
+                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
+                                    tortor aliquam ultricies.
                                 </p>
                             </div>
                         </li>
                         <li class="right clearfix">
 								<span class="chat-img pull-right">
-									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar"
+                                         class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="pull-left primary-font">Jane Doe</strong> <small class="text-muted">6 mins ago</small>
+                                    <strong class="pull-left primary-font">Jane Doe</strong>
+                                    <small class="text-muted">6 mins ago</small>
                                 </div>
                                 <p>
-                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum sapien.
+                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu
+                                    mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque
+                                    quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum
+                                    sapien.
                                 </p>
                             </div>
                         </li>
                         <li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    <strong class="primary-font">John Doe</strong>
+                                    <small class="text-muted">32 mins ago</small>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
+                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
+                                    tortor aliquam ultricies.
                                 </p>
                             </div>
                         </li>
@@ -252,7 +268,8 @@
 
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." />
+                        <input id="btn-input" type="text" class="form-control input-md"
+                               placeholder="Type your message here..."/>
                         <span class="input-group-btn">
 								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
 							</span>
@@ -270,7 +287,7 @@
                     <ul class="todo-list">
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Make a plan for today</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -281,7 +298,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Update Basecamp</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -292,7 +309,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Send email to Jane</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -303,7 +320,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Drink coffee</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -314,7 +331,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Do some work</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -325,7 +342,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Tidy up workspace</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -338,7 +355,7 @@
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" />
+                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task"/>
                         <span class="input-group-btn">
 								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
 							</span>
@@ -348,15 +365,14 @@
 
         </div><!--/.col-->
     </div><!--/.row-->
-</div>	<!--/.main-->
+</div>    <!--/.main-->
 
 
 <script>
-    $('#calendar').datepicker({
-    });
+    $('#calendar').datepicker({});
 
     !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
@@ -370,5 +386,5 @@
     })
 </script>
 </body>
-<%@include file="common/foot.jsp"%>
+<%@include file="common/foot.jsp" %>
 </html>

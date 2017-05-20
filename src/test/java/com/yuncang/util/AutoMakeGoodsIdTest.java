@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by lzw on 2017/5/14.
  */
@@ -16,7 +14,8 @@ import static org.junit.Assert.*;
 @ContextConfiguration("classpath:/spring/spring-dao.xml")
 public class AutoMakeGoodsIdTest {
     @Autowired
-    private  GoodsDao goodsDao;
+    private GoodsDao goodsDao;
+
     @Test
     public void makeId() throws Exception {
         String s = goodsDao.maxGoodsId();

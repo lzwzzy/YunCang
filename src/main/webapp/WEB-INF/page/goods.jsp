@@ -14,6 +14,7 @@
 <html>
 <head>
     <title>商品管理</title>
+
     <%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
     <%-- 表格 --%>
@@ -21,7 +22,29 @@
     <%-- 下拉菜单 --%>
     <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.css" rel="stylesheet">
     <%-- 行内编辑 --%>
-    <link href="https://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css"
+          rel="stylesheet">
+    <style>
+        .checkbox, .radio {
+            padding: 0;
+            margin: 0;
+        }
+        .fixed-table-container .bs-checkbox .th-inner {
+            padding: 8px;
+        }
+        .fixed-table-pagination .pagination a {
+            padding: 12px 10px;
+            line-height: 16px;
+        }
+        .pagination li {
+            margin-right: 0;
+        }
+        .pagination li.disabled.active>a,
+        .pagination li.disabled.active>span {
+            color: #fff;
+            background-color: #1abc9c;
+        }
+    </style>
 
 </head>
 
@@ -62,8 +85,9 @@
         <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
         <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
         <li><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
-        <li class="parent"><a href="#"><span class="glyphicon glyphicon-folder-close"></span> 仓库<span data-toggle="collapse" href="#sub-item-1"
-                                                                                                      class="icon pull-right"><em
+        <li class="parent"><a href="#"><span class="glyphicon glyphicon-folder-close"></span> 仓库<span
+                data-toggle="collapse" href="#sub-item-1"
+                class="icon pull-right"><em
                 class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
 
             <ul class="children collapse" id="sub-item-1">
@@ -123,7 +147,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">商品管理</h2>
+            <h1 class="page-header">商品管理</h1>
         </div>
     </div><!--/.row-->
 
@@ -131,7 +155,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">商品信息</div>
+                <%--<div class="panel-heading">商品信息</div>--%>
                 <div class="panel-body">
                     <div id="toolbar" class="btn-group">
                         <button id="btn_add" type="button" class="btn btn-default">
@@ -223,7 +247,7 @@
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="btn_submit"  >添加</button>
+                        <button type="button" class="btn btn-primary" id="btn_submit">添加</button>
                     </div>
                 </div>
 
@@ -233,6 +257,31 @@
 
 </div><!--/.main-->
 
+
+
+</body>
+<%@include file="common/foot.jsp" %>
+<%-- 行内修改插件 --%>
+<script src="https://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
+<%-- bootstrapTable插件--%>
+<script src="<%=rootPath%>/resources/js/common/bootstrap-table.js"></script>
+<%-- bootstrapTable插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
+<%-- 时间格式化插件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
+<%-- 时间格式化插件中文组件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
+<%-- 表单验证插件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+<%-- 表单验证插件中文组件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
+<%-- 下拉菜单插件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
+<%-- 下拉菜单插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
+<%-- bootstrapTable 表内编辑插件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js"></script>
+<script src="<%=rootPath%>/resources/js/goods/goods.js" type="text/javascript"></script>
 
 <script>
     !function ($) {
@@ -249,15 +298,4 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
-</body>
-<%@include file="common/foot.jsp" %>
-<script src="https://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
-<script src="<%=rootPath%>/resources/js/common/bootstrap-table.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js"></script>
-<script src="<%=rootPath%>/resources/js/goods/goods.js" type="text/javascript"></script>
 </html>

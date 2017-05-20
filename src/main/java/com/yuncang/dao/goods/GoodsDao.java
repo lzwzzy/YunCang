@@ -65,6 +65,7 @@ public interface GoodsDao {
 
     /**
      * 删除数据
+     *
      * @param goodsIdList id集合
      * @return 受影响行数
      * @throws Exception

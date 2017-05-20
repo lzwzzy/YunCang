@@ -7,9 +7,9 @@
     <!-- 登陆验证 -->
     <select id="loginCheck" resultType="UserEntity">
         SELECT userid
-          FROM user
+        FROM user
         WHERE username=#{username}
-          AND password=#{password}
+        AND password=#{password}
     </select>
 
     <!-- 用户注册 -->
@@ -19,7 +19,7 @@
     </insert>
 
     <!-- 判断用户名或手机号是否存在 -->
-    <select id="isExist"  resultType="int">
+    <select id="isExist" resultType="int">
         SELECT userid
         FROM user
         WHERE username=#{username}

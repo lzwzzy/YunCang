@@ -2,26 +2,21 @@ package com.yuncang.dao.goods;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.yuncang.entity.GoodsBill;
-import com.yuncang.util.AutoMakeGoodsId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by lzw on 2017/5/12.
- *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring/spring-dao.xml")
 public class GoodsDaoTest {
-
 
 
     @Autowired
@@ -29,9 +24,9 @@ public class GoodsDaoTest {
 
     @Test
     public void queryAllGoodsInfo() throws Exception {
-        PageBounds pageBounds = new PageBounds(1,5);
+        PageBounds pageBounds = new PageBounds(1, 5);
 
-        List<GoodsBill> goodsBills = goodsDao.queryAllGoodsWithProffer(pageBounds,"");
+        List<GoodsBill> goodsBills = goodsDao.queryAllGoodsWithProffer(pageBounds, "");
 
         //PageList pageList = (PageList) goodsEntities;
 
@@ -49,7 +44,7 @@ public class GoodsDaoTest {
                 1,
                 1,
                 "123");
-        if (i==1){
+        if (i == 1) {
             System.out.println("插入成功");
 
         }

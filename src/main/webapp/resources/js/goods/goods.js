@@ -1,6 +1,6 @@
 /**
  * Created by lzw on 2017/5/12.
- * goods页面操作
+ * 商品页面交互逻辑
  */
 $(function () {
     goods.loadTable.init();
@@ -267,6 +267,9 @@ var goods = {
                 columns: [{
                     checkbox: true,//首列显示checkbox
                     align: 'center'
+                    // formatter: function () {
+                    //
+                    // }
                 }, {
                     field: 'goodsId',      //列名
                     title: '编号',         //列头显示内容
@@ -396,11 +399,12 @@ var goods = {
                     icon: 'glyphicon glyphicon-info-sign',
                     title: '提示',
                     content: '请移步行内修改(表格中带有虚下划线的都可以修改)',
-                    type: 'purple'
+                    type: 'purple',
+                    btnClass: 'btn-green'
                 });
-            })
+            });
         }
     }
 
 
-}
+};

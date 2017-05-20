@@ -1,4 +1,4 @@
-package com.yuncang.controller.common;
+package com.yuncang.controller.user;
 
 import com.yuncang.dto.Result;
 import com.yuncang.service.UserService;

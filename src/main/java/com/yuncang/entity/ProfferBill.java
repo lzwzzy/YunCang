@@ -6,11 +6,47 @@ package com.yuncang.entity;
  * 供货商实体
  */
 public class ProfferBill {
+    private boolean checked;
     private String profferedId;
     private String profferedName;
+    private String mainBusiness;
     private String contactPerson;
     private String contactPhone;
+    private String profferedFax;
+    private String profferedAddress;
     private String remarks;
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    public String getMainBusiness() {
+        return mainBusiness;
+    }
+
+    public void setMainBusiness(String mainBusiness) {
+        this.mainBusiness = mainBusiness;
+    }
+
+    public String getProfferedFax() {
+        return profferedFax;
+    }
+
+    public void setProfferedFax(String profferedFax) {
+        this.profferedFax = profferedFax;
+    }
+
+    public String getProfferedAddress() {
+        return profferedAddress;
+    }
+
+    public void setProfferedAddress(String profferedAddress) {
+        this.profferedAddress = profferedAddress;
+    }
 
     public String getProfferedId() {
         return profferedId;
@@ -57,8 +93,11 @@ public class ProfferBill {
         return "ProfferBill{" +
                 "profferedId='" + profferedId + '\'' +
                 ", profferedName='" + profferedName + '\'' +
+                ", mainBusiness='" + mainBusiness + '\'' +
                 ", contactPerson='" + contactPerson + '\'' +
                 ", contactPhone='" + contactPhone + '\'' +
+                ", profferedFax='" + profferedFax + '\'' +
+                ", profferedAddress='" + profferedAddress + '\'' +
                 ", remarks='" + remarks + '\'' +
                 '}';
     }

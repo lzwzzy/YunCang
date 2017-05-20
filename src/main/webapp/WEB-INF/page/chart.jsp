@@ -15,14 +15,15 @@
 <head>
     <title>Lumino - Panels</title>
     <%-- 静态包含 --%>
-    <%@include file="/WEB-INF/page/common/head.jsp"%>
+    <%@include file="/WEB-INF/page/common/head.jsp" %>
 </head>
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -31,7 +32,8 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
@@ -58,7 +60,9 @@
         <li class="active"><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
+                                                                              class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
@@ -81,7 +85,8 @@
         <li role="presentation" class="divider"></li>
         <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
     </ul>
-    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a></div>
+    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
+    </div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -103,16 +108,20 @@
         <div class="col-lg-12">
             <h2>Alerts</h2>
             <div class="alert bg-primary" role="alert">
-                <span class="glyphicon glyphicon-info-sign"></span> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <span class="glyphicon glyphicon-info-sign"></span> Welcome to the admin dashboard panel bootstrap
+                template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
             </div>
             <div class="alert bg-success" role="alert">
-                <span class="glyphicon glyphicon-check"></span> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <span class="glyphicon glyphicon-check"></span> Welcome to the admin dashboard panel bootstrap template
+                <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
             </div>
             <div class="alert bg-warning" role="alert">
-                <span class="glyphicon glyphicon-warning-sign"></span> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <span class="glyphicon glyphicon-warning-sign"></span> Welcome to the admin dashboard panel bootstrap
+                template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
             </div>
             <div class="alert bg-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign"></span> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <span class="glyphicon glyphicon-exclamation-sign"></span> Welcome to the admin dashboard panel
+                bootstrap template <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
             </div>
         </div>
     </div><!--/.row-->
@@ -128,7 +137,9 @@
                     Default Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
@@ -139,7 +150,9 @@
                     Primary Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
@@ -150,7 +163,9 @@
                     Success Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
@@ -164,7 +179,9 @@
                     Info Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
@@ -175,7 +192,9 @@
                     Warning Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
@@ -186,14 +205,14 @@
                     Danger Panel
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div>
 
     </div><!-- /.row -->
-
-
 
 
     <div class="row">
@@ -205,7 +224,9 @@
             <div class="panel panel-blue">
                 <div class="panel-heading dark-overlay">Blue Panel</div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div><!--/.col-->
@@ -214,7 +235,9 @@
             <div class="panel panel-teal">
                 <div class="panel-heading dark-overlay">Teal Panel</div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div><!--/.col-->
@@ -223,7 +246,9 @@
             <div class="panel panel-orange">
                 <div class="panel-heading dark-overlay">Orange Panel</div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div><!--/.col-->
@@ -232,7 +257,9 @@
             <div class="panel panel-red">
                 <div class="panel-heading dark-overlay">Red Panel</div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit
+                        luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula.
+                        Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
                 </div>
             </div>
         </div><!--/.col-->
@@ -255,15 +282,21 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1">
                             <h4>Tab 1</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                         <div class="tab-pane fade" id="tab2">
                             <h4>Tab 2</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                         <div class="tab-pane fade" id="tab3">
                             <h4>Tab 3</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                     </div>
                 </div>
@@ -283,15 +316,21 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="pilltab1">
                             <h4>Tab 1</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                         <div class="tab-pane fade" id="pilltab2">
                             <h4>Tab 2</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                         <div class="tab-pane fade" id="pilltab3">
                             <h4>Tab 3</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
                         </div>
                     </div>
                 </div>
@@ -305,7 +344,7 @@
 
 <script>
     !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
@@ -319,5 +358,5 @@
     })
 </script>
 </body>
-<%@include file="common/foot.jsp"%>
+<%@include file="common/foot.jsp" %>
 </html>

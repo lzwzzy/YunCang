@@ -66,7 +66,7 @@
 
 <script type="text/javascript">
     !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
@@ -81,5 +81,7 @@
 </script>
 </body>
 <%@include file="/WEB-INF/page/common/foot.jsp" %>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
 <script src="<%=rootPath%>/resources/js/login/login.js" type="text/javascript"></script>
 </html>

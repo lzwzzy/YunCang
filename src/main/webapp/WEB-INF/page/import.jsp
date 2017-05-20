@@ -15,14 +15,15 @@
 <head>
     <title>Lumino - Widgets</title>
     <%-- 静态包含 --%>
-    <%@include file="/WEB-INF/page/common/head.jsp"%>
+    <%@include file="/WEB-INF/page/common/head.jsp" %>
 </head>
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -31,7 +32,8 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
@@ -58,7 +60,9 @@
         <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
+                                                                              class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
@@ -81,7 +85,8 @@
         <li role="presentation" class="divider"></li>
         <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
     </ul>
-    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a></div>
+    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
+    </div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -157,12 +162,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Advanced Table</div>
                 <div class="panel-body">
-                    <table id="table" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                    <table id="table" data-toggle="table" data-url="tables/data1.json" data-show-refresh="true"
+                           data-show-toggle="true" data-show-columns="true" data-search="true"
+                           data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name"
+                           data-sort-order="desc">
                         <thead>
                         <tr>
-                            <th data-field="state" data-checkbox="true" >Item ID</th>
+                            <th data-field="state" data-checkbox="true">Item ID</th>
                             <th data-field="id" data-sortable="true">商品编号</th>
-                            <th data-field="name"  data-sortable="true">商品名称</th>
+                            <th data-field="name" data-sortable="true">商品名称</th>
                             <th data-field="price" data-sortable="true">单价</th>
                             <th data-field="number" data-sortable="true">数量</th>
                             <th data-field="total" data-sortable="true">总价</th>
@@ -184,7 +192,8 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="name">Name</label>
                                 <div class="col-md-9">
-                                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                                    <input id="name" name="name" type="text" placeholder="Your name"
+                                           class="form-control">
                                 </div>
                             </div>
 
@@ -192,7 +201,8 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="email">Your E-mail</label>
                                 <div class="col-md-9">
-                                    <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                                    <input id="email" name="email" type="text" placeholder="Your email"
+                                           class="form-control">
                                 </div>
                             </div>
 
@@ -200,7 +210,8 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="message">Your message</label>
                                 <div class="col-md-9">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                                    <textarea class="form-control" id="message" name="message"
+                                              placeholder="Please enter your message here..." rows="5"></textarea>
                                 </div>
                             </div>
 
@@ -222,40 +233,51 @@
                     <ul>
                         <li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    <strong class="primary-font">John Doe</strong>
+                                    <small class="text-muted">32 mins ago</small>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
+                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
+                                    tortor aliquam ultricies.
                                 </p>
                             </div>
                         </li>
                         <li class="right clearfix">
 								<span class="chat-img pull-right">
-									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar"
+                                         class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="pull-left primary-font">Jane Doe</strong> <small class="text-muted">6 mins ago</small>
+                                    <strong class="pull-left primary-font">Jane Doe</strong>
+                                    <small class="text-muted">6 mins ago</small>
                                 </div>
                                 <p>
-                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum sapien.
+                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu
+                                    mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque
+                                    quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum
+                                    sapien.
                                 </p>
                             </div>
                         </li>
                         <li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
 								</span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    <strong class="primary-font">John Doe</strong>
+                                    <small class="text-muted">32 mins ago</small>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
+                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
+                                    tortor aliquam ultricies.
                                 </p>
                             </div>
                         </li>
@@ -264,7 +286,8 @@
 
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." />
+                        <input id="btn-input" type="text" class="form-control input-md"
+                               placeholder="Type your message here..."/>
                         <span class="input-group-btn">
 								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
 							</span>
@@ -289,7 +312,7 @@
                     <ul class="todo-list">
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Make a plan for today</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -300,7 +323,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Update Basecamp</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -311,7 +334,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Send email to Jane</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -322,7 +345,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Drink coffee</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -333,7 +356,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Do some work</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -344,7 +367,7 @@
                         </li>
                         <li class="todo-list-item">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                                <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">Tidy up workspace</label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -357,7 +380,7 @@
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" />
+                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task"/>
                         <span class="input-group-btn">
 								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
 							</span>
@@ -367,25 +390,13 @@
 
         </div><!--/.col-->
     </div><!--/.row-->
-</div>	<!--/.main-->
+</div>    <!--/.main-->
 
-
-<script src="<%=rootPath%>js/jquery-1.11.1.min.js"></script>
-<script src="<%=rootPath%>js/bootstrap.min.js"></script>
-<script src="<%=rootPath%>js/chart.min.js"></script>
-<script src="<%=rootPath%>js/chart-data.js"></script>
-<script src="<%=rootPath%>js/easypiechart.js"></script>
-<script src="<%=rootPath%>js/easypiechart-data.js"></script>
-<script src="<%=rootPath%>js/bootstrap-datepicker.js"></script>
-<script src="<%=rootPath%>js/bootstrap-table-zh-CN.js"></script>
-<script src="<%=rootPath%>js/bootstrap-table.js"></script>
-<script src="<%=rootPath%>js/bootstrap-table-zh-CN.min.js"></script>
 <script>
-    $('#calendar').datepicker({
-    });
+    $('#calendar').datepicker({});
 
     !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
@@ -399,5 +410,5 @@
     })
 </script>
 </body>
-
+<%@include file="common/foot.jsp" %>
 </html>

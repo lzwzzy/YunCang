@@ -15,14 +15,15 @@
 <head>
     <title>Lumino - Charts</title>
     <<%-- 静态包含 --%>
-    <%@include file="/WEB-INF/page/common/head.jsp"%>
+    <%@include file="/WEB-INF/page/common/head.jsp" %>
 </head>
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -31,7 +32,8 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
@@ -58,7 +60,9 @@
         <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
         <li class="parent ">
             <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
+                                                                              class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
@@ -81,7 +85,8 @@
         <li role="presentation" class="divider"></li>
         <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
     </ul>
-    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a></div>
+    <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
+    </div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -131,7 +136,7 @@
                 <div class="panel-heading">Pie Chart</div>
                 <div class="panel-body">
                     <div class="canvas-wrapper">
-                        <canvas class="chart" id="pie-chart" ></canvas>
+                        <canvas class="chart" id="pie-chart"></canvas>
                     </div>
                 </div>
             </div>
@@ -141,7 +146,7 @@
                 <div class="panel-heading">Doughnut Chart</div>
                 <div class="panel-body">
                     <div class="canvas-wrapper">
-                        <canvas class="chart" id="doughnut-chart" ></canvas>
+                        <canvas class="chart" id="doughnut-chart"></canvas>
                     </div>
                 </div>
             </div>
@@ -153,7 +158,7 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span>
+                    <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
                     </div>
                 </div>
             </div>
@@ -162,7 +167,8 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span>
+                    <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span
+                            class="percent">65%</span>
                     </div>
                 </div>
             </div>
@@ -171,7 +177,7 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span>
+                    <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span>
                     </div>
                 </div>
             </div>
@@ -180,20 +186,18 @@
             <div class="panel panel-default">
                 <div class="panel-body easypiechart-panel">
                     <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
+                    <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span>
                     </div>
                 </div>
             </div>
         </div>
     </div><!--/.row-->
 
-</div>	<!--/.main-->
-
-
+</div>    <!--/.main-->
 
 <script>
     !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
@@ -207,5 +211,5 @@
     })
 </script>
 </body>
-<%@include file="common/foot.jsp"%>
+<%@include file="common/foot.jsp" %>
 </html>

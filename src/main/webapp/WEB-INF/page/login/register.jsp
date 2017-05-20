@@ -135,15 +135,9 @@
 </div>
 
 </body>
-<script src="<%=rootPath %>/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
-
 <script src="<%=rootPath%>/resources/js/register/register.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
