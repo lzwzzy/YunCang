@@ -1,5 +1,7 @@
 package com.yuncang.service;
 
+import com.yuncang.entity.ProfferBill;
+
 import java.util.List;
 import java.util.Map;
 
@@ -61,4 +63,6 @@ public interface ProfferService {
      * @throws Exception
      */
     boolean deleteProfferInfo(List profferIdList) throws Exception;
+
+    List<ProfferBill> queryAllProffer();
 }

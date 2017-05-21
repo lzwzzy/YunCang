@@ -7,22 +7,22 @@ import java.util.Date;
  * Created by lzw on 2017/5/14.
  * 生成商品ID逻辑
  */
-public class AutoMakeGoodsId {
+public class AutoMakeImportId {
 
 
     private static String finalId;
 
-    public static String MakeId(String maxGoodsId) {
+    public static String MakeId(String maxImportId) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         String nowDate = dateFormat.format(new Date());
-        if (maxGoodsId != null && maxGoodsId.contains(nowDate)) {
-            String end = maxGoodsId.substring(8, 12);
+        if (maxImportId != null && maxImportId.contains(nowDate)) {
+            String end = maxImportId.substring(8, 14);
             int endNum = Integer.parseInt(end);
-            int tmpNum = 10000 + endNum + 1;
+            int tmpNum = 1000000 + endNum + 1;
             finalId = nowDate + subStr("" + tmpNum, 1);
             return finalId;
         } else {
-            finalId = nowDate + "0001";
+            finalId = nowDate + "000001";
             return finalId;
         }
     }

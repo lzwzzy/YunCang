@@ -9,6 +9,7 @@ import com.yuncang.entity.ProfferBill;
 import com.yuncang.service.ProfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +41,7 @@ public class ProfferServiceImpl implements ProfferService {
     }
 
     @Override
+    @Transactional
     public boolean insertProfferInfo(String profferedName, String mainBusiness, String contactPerson, String contactPhone, String profferedFax, String profferedAddress, String remarks) throws Exception {
         int isSuccess = profferDao.insertIntoProfferBill(profferedName, mainBusiness, contactPerson, contactPhone, profferedFax, profferedAddress, remarks);
         if (isSuccess > 0) {
@@ -50,6 +52,7 @@ public class ProfferServiceImpl implements ProfferService {
     }
 
     @Override
+    @Transactional
     public boolean updateProfferInfo(String row, String field) throws Exception {
         //利用jackson将row(json字符串)转化为POJO(GoodsBill)
         ObjectMapper mapper = new ObjectMapper();
@@ -64,6 +67,7 @@ public class ProfferServiceImpl implements ProfferService {
     }
 
     @Override
+    @Transactional
     public boolean deleteProfferInfo(List profferIdList) throws Exception {
         int i = profferDao.deleteProfferBill(profferIdList);
         if (i > 0) {
@@ -71,5 +75,11 @@ public class ProfferServiceImpl implements ProfferService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public List<ProfferBill> queryAllProffer() {
+        List<ProfferBill> profferBills = profferDao.queryAllProffer();
+        return profferBills;
     }
 }

@@ -57,4 +57,7 @@ public interface ProfferDao {
      */
     int deleteProfferBill(List profferIdList)throws Exception;
 
+
+    List<ProfferBill> queryAllProffer();
+
 }

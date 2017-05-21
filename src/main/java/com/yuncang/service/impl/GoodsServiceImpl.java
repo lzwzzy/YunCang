@@ -10,6 +10,7 @@ import com.yuncang.service.GoodsService;
 import com.yuncang.util.AutoMakeGoodsId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,11 +44,12 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
     public boolean insertGoodsInfo(String goodsName, int goodsType, int goodsPrice, int goodsStock, int proffer, int state, String remarks) throws Exception {
         //获取数据库中当前最大ID值
         String maxGoodsId = goodsDao.maxGoodsId();
         //自定义工具类AutoMakeGoodsId,生成id
-        Long goodsId = AutoMakeGoodsId.MakeId(maxGoodsId);
+        String goodsId = AutoMakeGoodsId.MakeId(maxGoodsId);
 
         int isSuccess = goodsDao.insertIntoGoodsBill(goodsId, goodsName, goodsPrice, goodsStock, proffer, goodsType, state, remarks);
         if (isSuccess == 1) {
@@ -59,6 +61,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
     public boolean updateGoodsInfo(String row, String field) throws Exception {
         //利用jackson将row(json字符串)转化为POJO(GoodsBill)
         ObjectMapper mapper = new ObjectMapper();
@@ -73,6 +76,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
     public boolean deleteGoodsInfo(List goodsIdList) throws Exception {
         int i = goodsDao.deleteGoodsInfo(goodsIdList);
         if (i > 0) {
@@ -80,5 +84,28 @@ public class GoodsServiceImpl implements GoodsService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public List<GoodsBill> queryAllGoodsWithProffer() {
+        List<GoodsBill> goodsBills = goodsDao.queryAllGoodsWithProffer();
+        return goodsBills;
+    }
+
+    @Override
+    @Transactional
+    public boolean importExcuse(String goodsId, int number) throws Exception {
+        int isSuccess = goodsDao.importExcuse(goodsId, number);
+        if (isSuccess > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String queryProfferId(String goodsId) throws Exception {
+        String profferId = goodsDao.queryProfferId(goodsId);
+        return profferId;
     }
 }

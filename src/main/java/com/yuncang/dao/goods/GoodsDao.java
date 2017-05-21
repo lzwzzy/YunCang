@@ -14,7 +14,7 @@ public interface GoodsDao {
 
 
     /**
-     * 查询全部商品信息集，返回结果携带供货商实体
+     * 查询全部商品信息集，返回结果携带供货商实体(分页呈现)
      *
      * @param pageBounds 分页信息
      * @param searchText 查询参数
@@ -37,7 +37,7 @@ public interface GoodsDao {
      * @return 插入行数
      * @throws Exception
      */
-    int insertIntoGoodsBill(@Param("goodsId") long goodsId,
+    int insertIntoGoodsBill(@Param("goodsId") String goodsId,
                             @Param("goodsName") String goodsName,
                             @Param("goodsPrice") int goodsPrice,
                             @Param("goodsStock") int goodsStock,
@@ -72,4 +72,25 @@ public interface GoodsDao {
      */
     int deleteGoodsInfo(List goodsIdList) throws Exception;
 
+
+    List<GoodsBill> queryAllGoodsWithProffer();
+
+    /**
+     * 执行进货操作
+     *
+     * @param goodsId 商品id
+     * @param number  进货数量
+     * @return 受影响行数
+     * @throws Exception
+     */
+    int importExcuse(@Param("goodsId") String goodsId, @Param("number") int number) throws Exception;
+
+    /**
+     * 根据商品id查询供货商
+     *
+     * @param goodsId 商品id
+     * @return 供货商id
+     * @throws Exception
+     */
+    String queryProfferId(String goodsId) throws Exception;
 }

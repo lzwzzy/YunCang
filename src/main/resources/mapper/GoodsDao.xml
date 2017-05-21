@@ -23,9 +23,10 @@
         INNER JOIN profferbill AS pro
         ON goods.proffered_id = pro.proffered_id
         <where>
+            goods.isdelete = 1
             <if test="searchText!=null and searchText != ''">
-                goods_name like '%${searchText}%'
-                or proffered_name like '%${searchText}%'
+                and (goods_name like '%${searchText}%'
+                or proffered_name like '%${searchText}%')
             </if>
         </where>
     </select>
@@ -56,7 +57,9 @@
 
     <!-- 查询最大商品id -->
     <select id="maxGoodsId" resultType="java.lang.String">
-        SELECT max(goods_id) FROM goodsbill
+        SELECT max(goods_id)
+        FROM goodsbill
+        WHERE isdelete=1
     </select>
     <!-- 更新数据 -->
     <update id="updateGoodsInfo" parameterType="GoodsBill">
@@ -87,10 +90,10 @@
         WHERE goods_id=#{goodsBill.goodsId}
     </update>
 
-    <!-- 删除数据 -->
-    <delete id="deleteGoodsInfo">
-        DELETE
-        FROM goodsbill
+    <!-- 删除数据(逻辑删除,物理上还是存在的) -->
+    <update id="deleteGoodsInfo">
+        UPDATE goodsbill
+        SET isdelete=0
         WHERE goods_id
         IN
         <!-- -collection:参数别名,如果没有则为list或array
@@ -101,5 +104,20 @@
         <foreach collection="list" item="goodsId" open="(" separator="," close=")">
             #{goodsId}
         </foreach>
-    </delete>
+    </update>
+
+    <!-- 进货 -->
+    <update id="importExcuse">
+        UPDATE goodsbill
+        SET goods_stock = goods_stock + #{number}
+        WHERE goods_id=#{goodsId}
+        AND isdelete=1
+    </update>
+
+    <!-- 根据商品id查询供货商id -->
+    <select id="queryProfferId" resultType="java.lang.String">
+        SELECT proffered_id
+        FROM goodsbill
+        WHERE goods_id = #{goodsId}
+    </select>
 </mapper>

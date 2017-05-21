@@ -16,8 +16,6 @@
 <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">
 <%-- jquery-confirm弹出框插件样式 --%>
 <link href="https://cdn.bootcss.com/jquery-confirm/3.2.0/jquery-confirm.min.css" rel="stylesheet">
-<%-- 日期选择器插件样式样式 --%>
-<link href="http://cdn.bootcss.com/bootstrap-datepicker/1.7.0-RC2/css/bootstrap-datepicker3.css" rel="stylesheet">
 <%-- 表单验证插件样式 --%>
 <link href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
 <link href="<%=rootPath%>/resources/css/styles.css" rel="stylesheet">

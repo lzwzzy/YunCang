@@ -3,9 +3,12 @@ package com.yuncang.controller.goods;
 import com.yuncang.dto.PageForBootstrap;
 import com.yuncang.dto.Result;
 import com.yuncang.entity.GoodsBill;
+import com.yuncang.entity.ProfferBill;
 import com.yuncang.service.GoodsService;
+import com.yuncang.service.ProfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,8 +28,13 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
+    @Autowired
+    private ProfferService profferService;
+
     @RequestMapping(value = "/goods")
-    public String buy() {
+    public String goods(Model model) {
+        List<ProfferBill> profferBills = profferService.queryAllProffer();
+        model.addAttribute("profferBills",profferBills);
         return "goods";
     }
 

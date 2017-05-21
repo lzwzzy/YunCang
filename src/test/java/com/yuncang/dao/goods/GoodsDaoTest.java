@@ -19,6 +19,7 @@ import java.util.List;
 public class GoodsDaoTest {
 
 
+
     @Autowired
     private GoodsDao goodsDao;
 
@@ -36,7 +37,7 @@ public class GoodsDaoTest {
 
     @Test
     public void insertIntoGoodsBill() throws Exception {
-        int i = goodsDao.insertIntoGoodsBill(123123,
+        int i = goodsDao.insertIntoGoodsBill("123123",
                 "哈哈",
                 123,
                 123,
@@ -74,6 +75,12 @@ public class GoodsDaoTest {
         System.out.println(list);
         int i = goodsDao.deleteGoodsInfo(list);
         System.out.println(i);
+    }
+
+    @Test
+    public void queryAllGoodsWithProffer() throws Exception {
+        List<GoodsBill> goodsBills = goodsDao.queryAllGoodsWithProffer();
+        System.out.println(goodsBills);
     }
 
 

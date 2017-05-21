@@ -1,6 +1,8 @@
 package com.yuncang.service;
 
 
+import com.yuncang.entity.GoodsBill;
+
 import java.util.List;
 import java.util.Map;
 
@@ -63,4 +65,24 @@ public interface GoodsService {
      * @throws Exception
      */
     boolean deleteGoodsInfo(List goodsIdList) throws Exception;
+
+    List<GoodsBill> queryAllGoodsWithProffer();
+
+    /**
+     * 执行进货操作
+     *
+     * @param goodsId 商品id
+     * @param number  进货数量
+     * @return 是否执行成功
+     */
+    boolean importExcuse(String goodsId, int number) throws Exception;
+
+    /**
+     * 根据商品id查询供货商
+     *
+     * @param goodsId 商品id
+     * @return 供货商id
+     * @throws Exception
+     */
+    String queryProfferId(String goodsId) throws Exception;
 }

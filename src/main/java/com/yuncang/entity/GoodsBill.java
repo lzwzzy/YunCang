@@ -8,7 +8,7 @@ import java.util.Date;
  * 商品实体
  */
 public class GoodsBill {
-    private boolean checked;
+    private boolean checked=false;
     private String goodsId;
     private String goodsName;
     private Double goodsPrice;
@@ -112,13 +112,17 @@ public class GoodsBill {
     @Override
     public String toString() {
         return "GoodsBill{" +
-                "goodsId='" + goodsId + '\'' +
+                "checked=" + checked +
+                ", goodsId='" + goodsId + '\'' +
                 ", goodsName='" + goodsName + '\'' +
                 ", goodsPrice=" + goodsPrice +
                 ", goodsStock='" + goodsStock + '\'' +
                 ", createTime=" + createTime +
                 ", remarks='" + remarks + '\'' +
                 ", profferedId='" + profferedId + '\'' +
+                ", goodsType=" + goodsType +
+                ", state=" + state +
+                ", profferBill=" + profferBill +
                 '}';
     }
 }

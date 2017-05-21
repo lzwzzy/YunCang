@@ -13,9 +13,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lumino - Widgets</title>
+    <title>采购</title>
+    <%@include file="/WEB-INF/page/common/tag.jsp" %>
     <%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
+    <%-- 表格 --%>
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet">
+    <%-- 下拉菜单 --%>
+    <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.css" rel="stylesheet">
+    <%-- 日期选择器插件样式 --%>
+    <link href="https://cdn.bootcss.com/flatpickr/2.6.1/flatpickr.css" rel="stylesheet">
+    <%--<link href="https://cdn.bootcss.com/flatpickr/2.6.1/rtl/themes/dark.rtl.css" rel="stylesheet">--%>
+    <style>
+        .checkbox, .radio {
+            padding: 0;
+            margin: 0;
+        }
+
+        .fixed-table-container .bs-checkbox .th-inner {
+            padding: 8px;
+        }
+
+        .fixed-table-pagination .pagination a {
+            padding: 12px 10px;
+            line-height: 16px;
+        }
+
+        .pagination li {
+            margin-right: 0;
+        }
+
+        .pagination li.disabled.active > a,
+        .pagination li.disabled.active > span {
+            color: #fff;
+            background-color: #1abc9c;
+        }
+    </style>
 </head>
 
 <body>
@@ -93,308 +126,145 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">Widgets</li>
+            <li class="active">采购</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Widgets</h1>
+            <h1 class="page-header">采购</h1>
         </div>
     </div><!--/.row-->
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body tabs">
 
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-blue panel-widget ">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">120</div>
-                        <div class="text-muted">New Orders</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-orange panel-widget">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-comment glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">52</div>
-                        <div class="text-muted">Comments</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-teal panel-widget">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-user glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">24</div>
-                        <div class="text-muted">New Users</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-red panel-widget">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-stats glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">25.2k</div>
-                        <div class="text-muted">Visitors</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Advanced Table</div>
-                <div class="panel-body">
-                    <table id="table" data-toggle="table" data-url="tables/data1.json" data-show-refresh="true"
-                           data-show-toggle="true" data-show-columns="true" data-search="true"
-                           data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name"
-                           data-sort-order="desc">
-                        <thead>
-                        <tr>
-                            <th data-field="state" data-checkbox="true">Item ID</th>
-                            <th data-field="id" data-sortable="true">商品编号</th>
-                            <th data-field="name" data-sortable="true">商品名称</th>
-                            <th data-field="price" data-sortable="true">单价</th>
-                            <th data-field="number" data-sortable="true">数量</th>
-                            <th data-field="total" data-sortable="true">总价</th>
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-    <div class="row">
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> Contact Form</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" action="" method="post">
-                        <fieldset>
-                            <!-- Name input-->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="name">Name</label>
-                                <div class="col-md-9">
-                                    <input id="name" name="name" type="text" placeholder="Your name"
-                                           class="form-control">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#pilltab1" data-toggle="tab">采购记录</a></li>
+                    <li><a href="#pilltab2" data-toggle="tab">采购单</a></li>
+                    <li><a href="#pilltab3" data-toggle="tab">采购分析</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="pilltab1">
+                        <form id="toolbar" class="form-inline">
+                            <div class="form-group has-success">
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="开始日期" class="form-control flat" data-input
+                                           id="date_from"> <!-- input is mandatory -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="结束日期" class="form-control flat" data-input
+                                           id="date_to"> <!-- input is mandatory -->
                                 </div>
                             </div>
+                            <button type="button" style="margin-left:10px" id="btn_query"
+                                    class="btn btn-primary">查询
+                            </button>
+                        </form>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <table id="table" data-row-style="rowStyle">
 
-                            <!-- Email input-->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="email">Your E-mail</label>
-                                <div class="col-md-9">
-                                    <input id="email" name="email" type="text" placeholder="Your email"
-                                           class="form-control">
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- Message body -->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="message">Your message</label>
-                                <div class="col-md-9">
-                                    <textarea class="form-control" id="message" name="message"
-                                              placeholder="Please enter your message here..." rows="5"></textarea>
+                        </div><!--/.row-->
+                    </div>
+                    <div class="tab-pane fade" id="pilltab2">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    NO.${importId}
+                                </div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" id="add_form">
+                                        <div class="form-group">
+                                            <label for="goodsName" class="col-sm-2 control-label">商品:</label>
+                                            <div class="col-sm-6">
+                                                <select class="selectpicker" id="goodsName">
+                                                    <c:forEach var="goods" items="${goodsBills}">
+                                                        <option value="${goods.goodsId}">${goods.goodsName}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="importPrice" class="col-sm-2 control-label">进价:</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">￥</span>
+                                                    <input name="importPrice" type="number" class="form-control"
+                                                           id="importPrice"
+                                                           placeholder="金额(进价)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="importCount" class="col-sm-2 control-label">进货量:</label>
+                                            <div class="col-sm-6">
+                                                <input name="importCount" type="number" class="form-control"
+                                                       id="importCount"
+                                                       placeholder="数量">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="remark" class="col-sm-2 control-label">备注</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="remarks" class="form-control" id="remark"
+                                                 placeholder="请输入备注"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
                                 </div>
                             </div>
-
-                            <!-- Form actions -->
-                            <div class="form-group">
-                                <div class="col-md-12 widget-right">
-                                    <button type="submit" class="btn btn-default btn-md pull-right">Submit</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-
-            <div class="panel panel-default chat">
-                <div class="panel-heading" id="accordion"><span class="glyphicon glyphicon-comment"></span> Chat</div>
-
-                <div class="panel-body">
-                    <ul>
-                        <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">John Doe</strong>
-                                    <small class="text-muted">32 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
-                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
-                                    tortor aliquam ultricies.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix">
-								<span class="chat-img pull-right">
-									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar"
-                                         class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="pull-left primary-font">Jane Doe</strong>
-                                    <small class="text-muted">6 mins ago</small>
-                                </div>
-                                <p>
-                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu
-                                    mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque
-                                    quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum
-                                    sapien.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">John Doe</strong>
-                                    <small class="text-muted">32 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
-                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
-                                    tortor aliquam ultricies.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md"
-                               placeholder="Type your message here..."/>
-                        <span class="input-group-btn">
-								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
-							</span>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pilltab3">
+                        <h4>Tab 3</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                            hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                            tincidunt odio auctor. </p>
                     </div>
                 </div>
             </div>
+        </div><!--/.panel-->
+    </div><!-- /.col-->
 
-        </div><!--/.col-->
 
-        <div class="col-md-4">
-
-            <div class="panel panel-red">
-                <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-calendar"></span>Calendar</div>
-                <div class="panel-body">
-                    <div id="calendar"></div>
-                </div>
-            </div>
-
-            <div class="panel panel-blue">
-                <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-check"></span>To-do List</div>
-                <div class="panel-body">
-                    <ul class="todo-list">
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Make a plan for today</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Update Basecamp</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Send email to Jane</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Drink coffee</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Do some work</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Tidy up workspace</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task"/>
-                        <span class="input-group-btn">
-								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
-							</span>
-                    </div>
-                </div>
-            </div>
-
-        </div><!--/.col-->
-    </div><!--/.row-->
 </div>    <!--/.main-->
 
-<script>
-    $('#calendar').datepicker({});
+</body>
+<%@include file="common/foot.jsp" %>
+<%-- 日期选择器插件 --%>
+<script src="https://cdn.bootcss.com/flatpickr/2.6.1/flatpickr.js"></script>
+<%-- 日期选择器插件中文组件 --%>
+<script src="https://cdn.bootcss.com/flatpickr/2.6.1/l10n/zh.js"></script>
+<%-- bootstrapTable插件--%>
+<script src="<%=rootPath%>/resources/js/common/bootstrap-table.js"></script>
+<%-- bootstrapTable插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
+<%-- 时间格式化插件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
+<%-- 时间格式化插件中文组件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
+<%-- 表单验证插件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+<%-- 表单验证插件中文组件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
+<%-- 下拉菜单插件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
+<%-- 下拉菜单插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
 
+<script src="<%=rootPath%>/resources/js/import/import.js" type="text/javascript"></script>
+<script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
@@ -409,6 +279,4 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
-</body>
-<%@include file="common/foot.jsp" %>
 </html>

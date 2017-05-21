@@ -15,6 +15,24 @@ public class ImportBill {
     private Long importCount;
     private Date importTime;
     private String remarks;
+    private GoodsBill goodsBill;
+    private ProfferBill profferBill;
+
+    public GoodsBill getGoodsBill() {
+        return goodsBill;
+    }
+
+    public void setGoodsBill(GoodsBill goodsBill) {
+        this.goodsBill = goodsBill;
+    }
+
+    public ProfferBill getProfferBill() {
+        return profferBill;
+    }
+
+    public void setProfferBill(ProfferBill profferBill) {
+        this.profferBill = profferBill;
+    }
 
     public String getImportId() {
         return importId;

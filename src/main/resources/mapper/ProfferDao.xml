@@ -16,9 +16,10 @@
         remarks
         FROM profferbill
         <where>
+            isdelete = 1
             <if test="searchText!=null and searchText != ''">
-                proffered_name LIKE '%${searchText}%'
-                or contact_person LIKE '%${searchText}%'
+                and (proffered_name LIKE '%${searchText}%'
+                or contact_person LIKE '%${searchText}%')
             </if>
         </where>
     </select>
@@ -75,10 +76,10 @@
         WHERE proffered_id=#{profferBill.profferedId}
     </update>
 
-    <!-- 删除信息 -->
-    <delete id="deleteProfferBill">
-        DELETE
-        FROM profferbill
+    <!-- 删除信息(逻辑删除,物理上还是存在的) -->
+    <update id="deleteProfferBill">
+        UPDATE profferbill
+        SET isdelete=0
         WHERE proffered_id
         IN
         <!-- -collection:参数别名,如果没有则为list或array
@@ -89,5 +90,5 @@
         <foreach collection="list" item="profferId" open="(" separator="," close=")">
             #{profferId}
         </foreach>
-    </delete>
+    </update>
 </mapper>

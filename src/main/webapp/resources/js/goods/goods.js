@@ -326,15 +326,9 @@ var goods = {
                             {value: '0', text: '其他'}]
                     }
                 }, {
-                    field: 'profferedId',
+                    field: 'profferBill.profferedName',
                     title: '供货商',
-                    align: 'center',
-                    editable: {
-                        type: 'select',
-                        title: '供货商',
-                        source: [{value: "800001", text: "辽宁大连供货商"},
-                            {value: "800002", text: "北京供货商"}]
-                    }
+                    align: 'center'
                 }, {
                     field: 'createTime',
                     title: '创建时间',

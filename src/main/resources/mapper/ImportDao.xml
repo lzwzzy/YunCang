@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuncang.dao.imported.ImportDao">
+
+    <select id="queryAllImportInfo" resultType="ImportBill">
+        SELECT
+        imp.import_id,
+        goods.goods_name "goodsbill.goods_name",
+        imp.import_price,
+        imp.import_count,
+        pro.proffered_name "profferbill.proffered_name",
+        imp.import_time,
+        imp.remarks
+        FROM importbill AS imp
+        INNER JOIN goodsbill AS goods
+        ON imp.goods_id = goods.goods_id
+        INNER JOIN profferbill AS pro
+        ON imp.proffered_id = pro.proffered_id
+        <where>
+            <if test="fromTime!=0 and toTime!=0">
+                imp.import_time>=#{fromTime}
+                AND imp.import_time <![CDATA[ <= ]]> #{toTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="maxImportId" resultType="java.lang.String">
+        SELECT max(import_id) FROM importbill
+    </select>
+
+    <insert id="insertImportInfo">
+        INSERT INTO importbill(
+        import_id,
+        goods_id,
+        proffered_id,
+        import_price,
+        import_count,
+        remarks
+        )
+        VALUES (
+        #{importId},
+        #{goodsId},
+        #{profferId},
+        #{importPrice},
+        #{importCount},
+        #{remarks}
+        )
+    </insert>
+
+
+</mapper>

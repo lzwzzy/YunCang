@@ -19,8 +19,6 @@ public class AutoMakeGoodsIdTest {
     @Test
     public void makeId() throws Exception {
         String s = goodsDao.maxGoodsId();
-        Long aLong = AutoMakeGoodsId.MakeId(s);
-        System.out.println(aLong);
     }
 
 }

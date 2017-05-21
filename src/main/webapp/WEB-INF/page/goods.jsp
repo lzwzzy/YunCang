@@ -14,7 +14,8 @@
 <html>
 <head>
     <title>商品管理</title>
-
+    <%-- 引入jstl --%>
+    <%@include file="/WEB-INF/page/common/tag.jsp"%>
     <%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
     <%-- 表格 --%>
@@ -223,8 +224,9 @@
                             <label for="proffer" class="col-sm-2 control-label">供货商:</label>
                             <div class="col-sm-6">
                                 <select class="selectpicker" id="proffer">
-                                    <option value="800002">北京供货商</option>
-                                    <option value="800001">辽宁大连供货商</option>
+                                    <c:forEach var="pro" items="${profferBills}">
+                                        <option value="${pro.profferedId}">${pro.profferedName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
