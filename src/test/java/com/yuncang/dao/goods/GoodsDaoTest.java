@@ -19,7 +19,6 @@ import java.util.List;
 public class GoodsDaoTest {
 
 
-
     @Autowired
     private GoodsDao goodsDao;
 

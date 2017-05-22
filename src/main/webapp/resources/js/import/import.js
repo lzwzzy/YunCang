@@ -120,8 +120,6 @@ var imported = {
                     }
                 }
             });
-
-
         }//Endif
 
 
@@ -192,7 +190,7 @@ var imported = {
                     align: 'center'
                 }, {
                     field: 'importTime',
-                    title: '创建时间',
+                    title: '采购时间',
                     align: 'center',
                     sortable: true,
                     sortName: 'import_time',
@@ -217,17 +215,21 @@ var imported = {
             //启动时间选择器
             $('#date_from').flatpickr({
                 enableTime: true,
-                disableMobile: true
+                disableMobile: true,
+                utc: true
             });
             $('#date_to').flatpickr({
                 enableTime: true,
-                disableMobile: true
+                disableMobile: true,
+                utc: true
             });
 
             //查询按钮按下
             $('#btn_query').click(function () {
-                from = moment($('#date_from').val(), "YYYY-MM-DD HH:mm").format('X');
-                to = moment($('#date_to').val(), "YYYY-MM-DD HH:mm").format('X');
+                from = moment($('#date_from').val(), "YYYY-MM-DD HH:mm:ss").format('X');
+                to = moment($('#date_to').val(), "YYYY-MM-DD HH:mm:ss").format('X');
+                var i = $('#date_from').data();
+                console.log(i);
                 //刷新表格
                 $('#table').bootstrapTable('refresh');
                 $('#table').bootstrapTable('resetView');

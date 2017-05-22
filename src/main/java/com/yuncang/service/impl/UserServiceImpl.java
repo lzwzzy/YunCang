@@ -1,8 +1,5 @@
 package com.yuncang.service.impl;
 
-import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
-import com.github.miemiedev.mybatis.paginator.domain.PageList;
-import com.github.miemiedev.mybatis.paginator.domain.Paginator;
 import com.yuncang.dao.user.UserDao;
 import com.yuncang.entity.UserEntity;
 import com.yuncang.service.UserService;
@@ -12,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,7 +22,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
-
 
 
     public boolean loginCheck(String user_name, String user_password) {
@@ -46,7 +41,6 @@ public class UserServiceImpl implements UserService {
         int state = userDao.insertUser(user);
         return state;
     }
-
 
 
     public boolean isExist(UserEntity userEntity) {
@@ -69,8 +63,6 @@ public class UserServiceImpl implements UserService {
         }
 
     }
-
-
 
 
 }

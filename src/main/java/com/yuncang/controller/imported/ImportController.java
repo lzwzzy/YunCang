@@ -7,6 +7,7 @@ import com.yuncang.entity.ImportBill;
 import com.yuncang.service.GoodsService;
 import com.yuncang.service.ImportService;
 import com.yuncang.util.AutoMakeImportId;
+import com.yuncang.util.GetTodayTimeStamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,9 +49,29 @@ public class ImportController {
         String maxImportId = importService.maxImportId();
         importId = AutoMakeImportId.MakeId(maxImportId);
 
+        //获取当天时间戳
+        long timesmorning = GetTodayTimeStamp.getTimesmorning();
+        long timesnight = GetTodayTimeStamp.getTimesnight();
+
+        //获取当天信息数据
+        Map<String, Object> todayInfo = importService.queryAllImportInfo(timesmorning, timesnight);
+        int todayimportTotalCount = (Integer) todayInfo.get("todayimportTotalCount");
+        int todayimportTotalPrice = (Integer) todayInfo.get("todayimportTotalPrice");
+
+        //获取总数据
+        Map<String, Object> allInfo = importService.queryAllImportInfo();
+        int importTotalCount = (Integer) allInfo.get("importTotalCount");
+        int importTotalPrice = (Integer) allInfo.get("importTotalPrice");
+
         //将查询到的值传到页面
         model.addAttribute("importId", importId);
         model.addAttribute("goodsBills", goodsBills);
+
+        model.addAttribute("todayimportTotalCount", todayimportTotalCount);
+        model.addAttribute("todayimportTotalPrice", todayimportTotalPrice);
+
+        model.addAttribute("importTotalCount", importTotalCount);
+        model.addAttribute("importTotalPrice", importTotalPrice);
         return "import";
     }
 
@@ -71,7 +92,7 @@ public class ImportController {
                                                                  @RequestParam(required = false, defaultValue = "10") int pageSize,
                                                                  @RequestParam(required = false) String sortOrder,
                                                                  @RequestParam(required = false) String sortName,
-                                                                 @RequestParam(required = false, defaultValue = "0") long fromTime,
+                                                                 @RequestParam(required = false, defaultValue = "0") long fromTime,//1495425600
                                                                  @RequestParam(required = false, defaultValue = "0") long toTime) {
         try {
             //拼接排序字符串

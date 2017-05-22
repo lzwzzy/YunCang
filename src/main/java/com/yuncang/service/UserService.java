@@ -1,9 +1,6 @@
 package com.yuncang.service;
 
-import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.yuncang.entity.UserEntity;
-
-import java.util.Map;
 
 /**
  * Created by lzw on 2017/4/22.

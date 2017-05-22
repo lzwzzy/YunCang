@@ -46,16 +46,17 @@ public interface ProfferDao {
             @Param("remarks") String remarks) throws Exception;
 
     int updateProfferBill(@Param("profferBill") ProfferBill profferBill,
-                          @Param("field") String field)throws Exception;
+                          @Param("field") String field) throws Exception;
 
 
     /**
      * 删除供货商信息
+     *
      * @param profferIdList 供货商id集合
      * @return 受影响行数
      * @throws Exception
      */
-    int deleteProfferBill(List profferIdList)throws Exception;
+    int deleteProfferBill(List profferIdList) throws Exception;
 
 
     List<ProfferBill> queryAllProffer();

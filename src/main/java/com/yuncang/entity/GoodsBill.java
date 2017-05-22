@@ -8,7 +8,7 @@ import java.util.Date;
  * 商品实体
  */
 public class GoodsBill {
-    private boolean checked=false;
+    private boolean checked = false;
     private String goodsId;
     private String goodsName;
     private Double goodsPrice;

@@ -1,16 +1,9 @@
 package com.yuncang.service;
 
-import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
-import com.github.miemiedev.mybatis.paginator.domain.Paginator;
-import com.yuncang.entity.UserEntity;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by lzw on 2017/5/11.

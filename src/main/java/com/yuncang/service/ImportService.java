@@ -26,6 +26,7 @@ public interface ImportService {
 
     /**
      * 查询数据库中最大id值
+     *
      * @return 最大id值
      */
     String maxImportId();
@@ -47,5 +48,21 @@ public interface ImportService {
                              String profferId,
                              String importPrice,
                              String importCount,
-                             String remarks)throws Exception;
+                             String remarks) throws Exception;
+
+    /**
+     * 查询当天数据
+     *
+     * @param fromTime 当天开始时间
+     * @param toTime   当天结束时间
+     * @return 今日数据信息
+     */
+    Map<String, Object> queryAllImportInfo(long fromTime, long toTime);
+
+    /**
+     * 查询总数据
+     *
+     * @return 总数据信息
+     */
+    Map<String, Object> queryAllImportInfo();
 }

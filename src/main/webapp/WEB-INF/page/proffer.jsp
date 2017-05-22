@@ -29,18 +29,22 @@
             padding: 0;
             margin: 0;
         }
+
         .fixed-table-container .bs-checkbox .th-inner {
             padding: 8px;
         }
+
         .fixed-table-pagination .pagination a {
             padding: 12px 10px;
             line-height: 16px;
         }
+
         .pagination li {
             margin-right: 0;
         }
-        .pagination li.disabled.active>a,
-        .pagination li.disabled.active>span {
+
+        .pagination li.disabled.active > a,
+        .pagination li.disabled.active > span {
             color: #fff;
             background-color: #1abc9c;
         }

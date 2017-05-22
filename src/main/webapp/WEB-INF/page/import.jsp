@@ -215,7 +215,7 @@
                                             <label for="remark" class="col-sm-2 control-label">备注</label>
                                             <div class="col-sm-6">
                                                 <textarea name="remarks" class="form-control" id="remark"
-                                                 placeholder="请输入备注"></textarea>
+                                                          placeholder="请输入备注"></textarea>
                                             </div>
                                         </div>
                                     </form>
@@ -227,18 +227,98 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pilltab3">
-                        <h4>Tab 3</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
-                            hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
-                            tincidunt odio auctor. </p>
+                        <h4>今日数据</h4>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-blue panel-widget ">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">5</div>
+                                            <div class="text-muted">今日采购商品</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-teal panel-widget">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">${todayimportTotalCount}</div>
+                                            <div class="text-muted">今日采购量</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-red panel-widget">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">￥${todayimportTotalPrice}</div>
+                                            <div class="text-muted">今日支出</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/.row-->
+                        <h4>总数据</h4>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-blue panel-widget ">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">5</div>
+                                            <div class="text-muted">采购商品</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-teal panel-widget">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">${importTotalCount}</div>
+                                            <div class="text-muted">采购总量</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-3">
+                                <div class="panel panel-red panel-widget">
+                                    <div class="row no-padding">
+                                        <div class="col-sm-3 col-lg-5 widget-left">
+                                            <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                        </div>
+                                        <div class="col-sm-9 col-lg-7 widget-right">
+                                            <div class="large">￥${importTotalPrice}</div>
+                                            <div class="text-muted">总支出</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/.row-->
                     </div>
                 </div>
-            </div>
-        </div><!--/.panel-->
-    </div><!-- /.col-->
+            </div><!--/.panel-->
+        </div><!-- /.col-->
 
 
-</div>    <!--/.main-->
+    </div>    <!--/.main-->
 
 </body>
 <%@include file="common/foot.jsp" %>

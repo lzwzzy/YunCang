@@ -4,6 +4,7 @@ import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.yuncang.entity.ImportBill;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,8 +23,9 @@ public interface ImportDao {
      * @throws Exception
      */
     List<ImportBill> queryAllImportInfo(@Param("pageBounds") PageBounds pageBounds,
-                                        @Param("fromTime") long fromTime,
-                                        @Param("toTime") long toTime) throws Exception;
+                                        @Param("fromTime") Date fromTime,
+                                        @Param("toTime") Date toTime,
+                                        @Param("isHaveTime") Boolean isHaveTime) throws Exception;
 
     /**
      * 查询最大采购编号ID
@@ -50,4 +52,23 @@ public interface ImportDao {
                          @Param("importPrice") String importPrice,
                          @Param("importCount") String importCount,
                          @Param("remarks") String remarks) throws Exception;
+
+    /**
+     * 查询当日记录，无需分页，做统计用
+     *
+     * @param fromTime   当天开始时间
+     * @param toTime     当天结束时间
+     * @param isHaveTime 时间是否存在标志位
+     * @return 当日信息列表
+     */
+    List<ImportBill> queryAllImportInfo(@Param("fromTime") Date fromTime,
+                                        @Param("toTime") Date toTime,
+                                        @Param("isHaveTime") Boolean isHaveTime);
+
+    /**
+     * 查询总记录
+     *
+     * @return 总记录列表
+     */
+    List<ImportBill> queryAllImportInfo();
 }

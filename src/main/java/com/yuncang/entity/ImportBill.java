@@ -100,6 +100,8 @@ public class ImportBill {
                 ", importCount=" + importCount +
                 ", importTime=" + importTime +
                 ", remarks='" + remarks + '\'' +
+                ", goodsBill=" + goodsBill +
+                ", profferBill=" + profferBill +
                 '}';
     }
 }

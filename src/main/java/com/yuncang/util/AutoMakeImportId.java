@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * Created by lzw on 2017/5/14.
- * 生成商品ID逻辑
+ * 生成采购流水号逻辑
  */
 public class AutoMakeImportId {
 

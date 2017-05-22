@@ -34,7 +34,7 @@ public class GoodsController {
     @RequestMapping(value = "/goods")
     public String goods(Model model) {
         List<ProfferBill> profferBills = profferService.queryAllProffer();
-        model.addAttribute("profferBills",profferBills);
+        model.addAttribute("profferBills", profferBills);
         return "goods";
     }
 
