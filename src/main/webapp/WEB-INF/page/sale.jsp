@@ -4,6 +4,7 @@
   Date: 2017/4/15
   Time: 10:44
   To change this template use File | Settings | File Templates.
+  销售界面
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -13,9 +14,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lumino - Charts</title>
+    <title>销售</title>
     <<%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
+    <%-- 表格 --%>
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet">
+    <%-- 下拉菜单 --%>
+    <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.css" rel="stylesheet">
+    <%-- 日期选择器插件样式 --%>
+    <link href="https://cdn.bootcss.com/flatpickr/2.6.1/flatpickr.css" rel="stylesheet">
+    <%--<link href="https://cdn.bootcss.com/flatpickr/2.6.1/rtl/themes/dark.rtl.css" rel="stylesheet">--%>
+    <style>
+        .checkbox, .radio {
+            padding: 0;
+            margin: 0;
+        }
+
+        .fixed-table-container .bs-checkbox .th-inner {
+            padding: 8px;
+        }
+
+        .fixed-table-pagination .pagination a {
+            padding: 12px 10px;
+            line-height: 16px;
+        }
+
+        .pagination li {
+            margin-right: 0;
+        }
+
+        .pagination li.disabled.active > a,
+        .pagination li.disabled.active > span {
+            color: #fff;
+            background-color: #1abc9c;
+        }
+    </style>
 </head>
 
 <body>
@@ -93,108 +126,77 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">Charts</li>
+            <li class="active">销售</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Charts</h1>
+            <h1 class="page-header">销售</h1>
 
         </div>
     </div><!--/.row-->
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Line Chart</div>
-                <div class="panel-body">
-                    <div class="canvas-wrapper">
-                        <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
+                <div class="panel-body tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">销售记录</a></li>
+                        <li><a href="#tab2" data-toggle="tab">销售单</a></li>
+                        <li><a href="#tab3" data-toggle="tab">销售分析</a></li>
+                    </ul>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Bar Chart</div>
-                <div class="panel-body">
-                    <div class="canvas-wrapper">
-                        <canvas class="main-chart" id="bar-chart" height="200" width="600"></canvas>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1">
+                            <h4>Tab 1</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
+                        </div>
+                        <div class="tab-pane fade" id="tab2">
+                            <h4>Tab 2</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
+                        </div>
+                        <div class="tab-pane fade" id="tab3">
+                            <h4>Tab 3</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
+                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
+                                tincidunt odio auctor. </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">Pie Chart</div>
-                <div class="panel-body">
-                    <div class="canvas-wrapper">
-                        <canvas class="chart" id="pie-chart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">Doughnut Chart</div>
-                <div class="panel-body">
-                    <div class="canvas-wrapper">
-                        <canvas class="chart" id="doughnut-chart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span
-                            class="percent">65%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Label:</h4>
-                    <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
+            </div><!--/.panel-->
+        </div><!--/.col-->
+    </div>
 
 </div>    <!--/.main-->
 
+
+</body>
+<%@include file="common/foot.jsp" %>
+<%-- 日期选择器插件 --%>
+<script src="https://cdn.bootcss.com/flatpickr/2.6.1/flatpickr.js"></script>
+<%-- 日期选择器插件中文组件 --%>
+<script src="https://cdn.bootcss.com/flatpickr/2.6.1/l10n/zh.js"></script>
+<%-- bootstrapTable插件--%>
+<script src="<%=rootPath%>/resources/js/common/bootstrap-table.js"></script>
+<%-- bootstrapTable插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
+<%-- 时间格式化插件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
+<%-- 时间格式化插件中文组件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
+<%-- 表单验证插件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+<%-- 表单验证插件中文组件 --%>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
+<%-- 下拉菜单插件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
+<%-- 下拉菜单插件中文组件 --%>
+<script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
 <script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
@@ -210,6 +212,4 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
-</body>
-<%@include file="common/foot.jsp" %>
 </html>

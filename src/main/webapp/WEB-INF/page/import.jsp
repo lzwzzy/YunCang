@@ -4,6 +4,7 @@
   Date: 2017/4/15
   Time: 10:46
   To change this template use File | Settings | File Templates.
+  采购界面
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -135,191 +136,181 @@
             <h1 class="page-header">采购</h1>
         </div>
     </div><!--/.row-->
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-body tabs">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body tabs">
 
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#pilltab1" data-toggle="tab">采购记录</a></li>
-                    <li><a href="#pilltab2" data-toggle="tab">采购单</a></li>
-                    <li><a href="#pilltab3" data-toggle="tab">采购分析</a></li>
-                </ul>
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#pilltab1" data-toggle="tab">采购记录</a></li>
+                        <li><a href="#pilltab2" data-toggle="tab">采购单</a></li>
+                        <li><a href="#pilltab3" data-toggle="tab">采购分析</a></li>
+                    </ul>
 
-                <div class="tab-content">
-                    <div class="tab-pane fade in active" id="pilltab1">
-                        <form id="toolbar" class="form-inline">
-                            <div class="form-group has-success">
-                                <div class="col-sm-6">
-                                    <input type="text" placeholder="开始日期" class="form-control flat" data-input
-                                           id="date_from"> <!-- input is mandatory -->
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" placeholder="结束日期" class="form-control flat" data-input
-                                           id="date_to"> <!-- input is mandatory -->
-                                </div>
-                            </div>
-                            <button type="button" style="margin-left:10px" id="btn_query"
-                                    class="btn btn-primary">查询
-                            </button>
-                        </form>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <table id="table" data-row-style="rowStyle">
-
-                                        </table>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="pilltab1">
+                            <form id="toolbar" class="form-inline">
+                                <div class="form-group has-success">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="开始日期" class="form-control flat" data-input
+                                               id="date_from"> <!-- input is mandatory -->
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="结束日期" class="form-control flat" data-input
+                                               id="date_to"> <!-- input is mandatory -->
                                     </div>
                                 </div>
-                            </div>
-                        </div><!--/.row-->
-                    </div>
-                    <div class="tab-pane fade" id="pilltab2">
-                        <div class="col-md-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    NO.${importId}
-                                </div>
-                                <div class="panel-body">
-                                    <form class="form-horizontal" id="add_form">
-                                        <div class="form-group">
-                                            <label for="goodsName" class="col-sm-2 control-label">商品:</label>
-                                            <div class="col-sm-6">
-                                                <select class="selectpicker" id="goodsName">
-                                                    <c:forEach var="goods" items="${goodsBills}">
-                                                        <option value="${goods.goodsId}">${goods.goodsName}</option>
-                                                    </c:forEach>
-                                                </select>
-                                            </div>
+                                <button type="button" style="margin-left:10px" id="btn_query"
+                                        class="btn btn-primary">查询
+                                </button>
+                            </form>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <table id="table" data-row-style="rowStyle">
+
+                                            </table>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="importPrice" class="col-sm-2 control-label">进价:</label>
-                                            <div class="col-sm-6">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">￥</span>
-                                                    <input name="importPrice" type="number" class="form-control"
-                                                           id="importPrice"
-                                                           placeholder="金额(进价)">
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
+                        </div>
+                        <div class="tab-pane fade" id="pilltab2">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        NO.${importId}
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal" id="add_form">
+                                            <div class="form-group">
+                                                <label for="goodsName" class="col-sm-2 control-label">商品:</label>
+                                                <div class="col-sm-6">
+                                                    <select class="selectpicker" id="goodsName">
+                                                        <c:forEach var="goods" items="${goodsBills}">
+                                                            <option value="${goods.goodsId}">${goods.goodsName}</option>
+                                                        </c:forEach>
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="importCount" class="col-sm-2 control-label">进货量:</label>
-                                            <div class="col-sm-6">
-                                                <input name="importCount" type="number" class="form-control"
-                                                       id="importCount"
-                                                       placeholder="数量">
+                                            <div class="form-group">
+                                                <label for="importPrice" class="col-sm-2 control-label">进价:</label>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">￥</span>
+                                                        <input name="importPrice" type="number" class="form-control"
+                                                               id="importPrice"
+                                                               placeholder="金额(进价)">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="remark" class="col-sm-2 control-label">备注</label>
-                                            <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="importCount" class="col-sm-2 control-label">进货量:</label>
+                                                <div class="col-sm-6">
+                                                    <input name="importCount" type="number" class="form-control"
+                                                           id="importCount"
+                                                           placeholder="数量">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="remark" class="col-sm-2 control-label">备注</label>
+                                                <div class="col-sm-6">
                                                 <textarea name="remarks" class="form-control" id="remark"
                                                           placeholder="请输入备注"></textarea>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="panel-footer">
-                                    <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
+                                        </form>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="pilltab3">
+                            <h4>今日数据</h4>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-teal panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">
+                                                    <a href="/yuncang/goods">${goodsBills.size()}</a>
+                                                </div>
+                                                <div class="text-muted">今日在架商品</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-blue panel-widget ">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">${todayimportTotalCount}</div>
+                                                <div class="text-muted">今日采购量</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-red panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">￥${todayimportTotalPrice}</div>
+                                                <div class="text-muted">今日支出</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
+                            <h4>总数据</h4>
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-blue panel-widget ">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">${importTotalCount}</div>
+                                                <div class="text-muted">采购总量</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-red panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">￥${importTotalPrice}</div>
+                                                <div class="text-muted">总支出</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="pilltab3">
-                        <h4>今日数据</h4>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-blue panel-widget ">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">5</div>
-                                            <div class="text-muted">今日采购商品</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-teal panel-widget">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">${todayimportTotalCount}</div>
-                                            <div class="text-muted">今日采购量</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-red panel-widget">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-usd glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">￥${todayimportTotalPrice}</div>
-                                            <div class="text-muted">今日支出</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--/.row-->
-                        <h4>总数据</h4>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-blue panel-widget ">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">5</div>
-                                            <div class="text-muted">采购商品</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-teal panel-widget">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">${importTotalCount}</div>
-                                            <div class="text-muted">采购总量</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 col-lg-3">
-                                <div class="panel panel-red panel-widget">
-                                    <div class="row no-padding">
-                                        <div class="col-sm-3 col-lg-5 widget-left">
-                                            <em class="glyphicon glyphicon-usd glyphicon-l"></em>
-                                        </div>
-                                        <div class="col-sm-9 col-lg-7 widget-right">
-                                            <div class="large">￥${importTotalPrice}</div>
-                                            <div class="text-muted">总支出</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--/.row-->
-                    </div>
-                </div>
-            </div><!--/.panel-->
-        </div><!-- /.col-->
-
-
+                </div><!--/.panel-->
+            </div><!-- /.col-->
+        </div>
     </div>    <!--/.main-->
-
+</div>
 </body>
 <%@include file="common/foot.jsp" %>
 <%-- 日期选择器插件 --%>

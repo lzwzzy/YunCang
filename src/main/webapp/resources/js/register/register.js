@@ -1,6 +1,9 @@
 /**
  * Created by lzw on 2017/4/23.
  */
+$(function () {
+    register.submit.init();
+});
 var t = 3;
 var register = {
     URL: {
@@ -124,7 +127,7 @@ var register = {
             //表单验证
             register.formcheck();
             //点击提交后...
-            $('#submit').click(function () {
+            $('#btn_register').click(function () {
                 //获取表单内容
                 var phone = $('#phone').val();
                 var username = $('#username').val();
@@ -150,6 +153,19 @@ var register = {
                             //并且在3秒后跳转到登陆页面
                             //每秒执行一次,showTime()
                             window.setInterval("register.showTime()", 1000);
+                        }else {
+                            //验证失败时，弹出提示
+                            var jc2 = $.dialog({
+                                icon: 'glyphicon glyphicon-remove-sign',
+                                title: '提示',
+                                content: '注册失败',
+                                type: 'orange',
+                                onContentReady: function () {
+                                    setTimeout(function () {
+                                        jc2.close();
+                                    }, 1000);//1秒后消失
+                                }
+                            });
                         }
                     });
                 }

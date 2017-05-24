@@ -265,7 +265,7 @@ var goods = {
                     });
                 },
                 columns: [{
-                    checkbox: true,//首列显示checkbox
+                    checkbox: true,       //首列显示checkbox
                     align: 'center'
                     // formatter: function () {
                     //
