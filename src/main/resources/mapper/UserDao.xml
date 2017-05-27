@@ -30,4 +30,16 @@
         SELECT *
         FROM user
     </select>
+
+    <!-- 根据用户名查找用户个人信息 -->
+    <select id="queryPersonInfoByUserName" resultType="UserEntity">
+        SELECT
+        username,
+        phone,
+        sex,
+        email,
+        introduce
+        FROM user
+        WHERE username=#{username}
+    </select>
 </mapper>

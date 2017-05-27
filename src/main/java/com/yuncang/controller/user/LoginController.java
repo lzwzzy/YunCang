@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by lzw on 2017/5/8.
  * 用户登陆
@@ -27,16 +30,18 @@ public class LoginController {
     /**
      * 登陆验证
      *
-     * @param username
-     * @param password
+     * @param username 用户名
+     * @param password 密码
      * @return
      */
     @RequestMapping(value = "/dologin", method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean> dologin(String username, String password) {
+    public Result<Boolean> dologin(HttpSession session,HttpServletRequest request,String username, String password) {
 
         boolean islogin = service.loginCheck(username, password);
         if (islogin) {
+            session = request.getSession();
+            session.setAttribute("user",username);
             return new Result<Boolean>(true);
         }
         return new Result<Boolean>(false, "用户名或密码错误");

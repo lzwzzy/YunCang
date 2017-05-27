@@ -134,7 +134,12 @@ var register = {
                 var password = $('#password').val();
                 var repassword = $('#password_confirm').val();
                 var successModel = $('#successModal');
-                if (phone.trim() != 0 && username.trim() != "" && password.trim() != "" && repassword != "") {
+                //获取表单验证对象
+                var bootstrapValidator = $("#add_from").data('bootstrapValidator');
+                //执行验证
+                bootstrapValidator.validate();
+                //如果验证通过...
+                if (bootstrapValidator.isValid()) {
                     //发送ajax请求
                     $.post(register.URL.doregister(), {
                         //参数

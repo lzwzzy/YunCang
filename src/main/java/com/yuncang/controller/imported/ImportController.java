@@ -6,7 +6,7 @@ import com.yuncang.entity.GoodsBill;
 import com.yuncang.entity.ImportBill;
 import com.yuncang.service.GoodsService;
 import com.yuncang.service.ImportService;
-import com.yuncang.util.AutoMakeImportId;
+import com.yuncang.util.AutoMakeSerialId;
 import com.yuncang.util.GetTodayTimeStamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,7 +47,7 @@ public class ImportController {
 
         //查找数据库中最大ID值
         String maxImportId = importService.maxImportId();
-        importId = AutoMakeImportId.MakeId(maxImportId);
+        importId = AutoMakeSerialId.MakeId(maxImportId);
 
         //获取当天时间戳
         long timesmorning = GetTodayTimeStamp.getTimesmorning();
@@ -115,6 +115,15 @@ public class ImportController {
         }
     }
 
+    /**
+     * 新进货单
+     *
+     * @param goodsId     商品ID
+     * @param importPrice 进价
+     * @param importCount 进货数量
+     * @param remarks     备注
+     * @return 是否成功
+     */
     @ResponseBody
     @RequestMapping(value = "/newImportForm", method = RequestMethod.POST)
     public Result newImportForm(@RequestParam(required = false) String goodsId,
@@ -138,5 +147,16 @@ public class ImportController {
             e.printStackTrace();
             return new Result(false, "数据异常");
         }
+    }
+
+    /**
+     * 查询近7天的采购数据
+     * @return 近7天的采购数据
+     */
+    @ResponseBody
+    @RequestMapping(value = "/chartImportInfo",method = RequestMethod.POST)
+    public Map<String, Object> queryBefore7DaysImportInfo(){
+        Map<String, Object> map = importService.queryaWeekImprotInfo();
+        return map;
     }
 }

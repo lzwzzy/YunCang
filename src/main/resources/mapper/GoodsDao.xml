@@ -113,6 +113,15 @@
         WHERE goods_id=#{goodsId}
         AND isdelete=1
     </update>
+    <!-- 出货 -->
+    <update id="saleExcuse">
+        UPDATE goodsbill
+        SET goods_stock = goods_stock - #{number}
+        WHERE goods_id=#{goodsId}
+        AND isdelete=1
+        AND goods_stock>0
+        AND goods_stock>#{number}
+    </update>
 
     <!-- 根据商品id查询供货商id -->
     <select id="queryProfferId" resultType="java.lang.String">

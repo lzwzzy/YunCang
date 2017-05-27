@@ -63,7 +63,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
+            <a class="navbar-brand" href="#"><span>云仓</span>admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
@@ -82,58 +82,37 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <form role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="搜索">
+            <img src="<%=rootPath%>/resources/img/logo-dark.png">
         </div>
     </form>
     <ul class="nav menu">
         <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
         <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
         <li><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
-        <li class="parent"><a href="#"><span class="glyphicon glyphicon-folder-close"></span> 仓库<span
-                data-toggle="collapse" href="#sub-item-1"
-                class="icon pull-right"><em
-                class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
-            <ul class="children collapse" id="sub-item-1">
+        <li class="parent"><a href="#sub-item-1" data-toggle="collapse"><span
+                class="glyphicon glyphicon-folder-close"></span>
+            仓库<span
+                    data-toggle="collapse"
+                    href="#sub-item-1"
+                    class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
+            <ul class="children collapse in" id="sub-item-1">
                 <li>
                     <a class="" href="/yuncang/goods">
-                        <span class="glyphicon glyphicon-share-alt"></span> 商品管理
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理
                     </a>
                 </li>
                 <li>
                     <a class="" href="/yuncang/proffer">
-                        <span class="glyphicon glyphicon-share-alt"></span> 供货商管理
+                        <span class="glyphicon glyphicon-cloud-download"></span> 供货商管理
                     </a>
                 </li>
             </ul>
         </li>
         <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
-        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
-        <li class="parent ">
-            <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-2"
-                                                                              class="icon pull-right"><em
-                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-            </a>
-            <ul class="children collapse" id="sub-item-2">
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
-                    </a>
-                </li>
-            </ul>
-        </li>
+
         <li role="presentation" class="divider"></li>
-        <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+
     </ul>
     <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
     </div>

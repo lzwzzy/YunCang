@@ -65,4 +65,10 @@ public interface ImportService {
      * @return 总数据信息
      */
     Map<String, Object> queryAllImportInfo();
+
+    /**
+     * 查询近7天的采购数据
+     * @return 近7天的数据
+     */
+    Map<String,Object> queryaWeekImprotInfo();
 }

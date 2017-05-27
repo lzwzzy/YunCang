@@ -46,4 +46,12 @@ public interface UserDao {
      */
     List<UserEntity> queryAll(PageBounds pageBounds);
 
+
+    /**
+     * 根据用户名查询用户个人信息
+     * @param username 用户名
+     * @return 个人信息
+     */
+    UserEntity queryPersonInfoByUserName(String username);
+
 }

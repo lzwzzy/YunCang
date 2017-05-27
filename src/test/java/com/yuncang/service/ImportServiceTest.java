@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
         "classpath:/spring/spring-service.xml"})
 public class ImportServiceTest {
 
+
     @Autowired
     private ImportService importService;
 
@@ -55,5 +56,11 @@ public class ImportServiceTest {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.MILLISECOND, 0);
         return (int) (cal.getTimeInMillis()/1000);
+    }
+
+    @Test
+    public void queryaWeekImprotInfo() throws Exception {
+        Map<String, Object> map = importService.queryaWeekImprotInfo();
+
     }
 }

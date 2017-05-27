@@ -10,6 +10,8 @@ public class UserEntity {
     private String password;
     private long phone;
     private String sex;
+    private String email;
+    private String introduce;
 
     public int getUserid() {
         return userid;
@@ -51,6 +53,21 @@ public class UserEntity {
         this.sex = sex;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce;
+    }
 
     @Override
     public String toString() {
@@ -60,6 +77,8 @@ public class UserEntity {
                 ", password='" + password + '\'' +
                 ", phone=" + phone +
                 ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", introduce='" + introduce + '\'' +
                 '}';
     }
 }

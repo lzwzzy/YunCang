@@ -271,7 +271,7 @@ var goods = {
                     //
                     // }
                 }, {
-                    field: 'goodsId',      //列名
+                    field: 'goodsId',     //列名
                     title: '编号',         //列头显示内容
                     align: 'center',      //数据居中显示
                     sortable: true,       //启用排序(默认false)

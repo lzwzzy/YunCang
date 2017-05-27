@@ -50,42 +50,37 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <form role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="搜索">
+            <img src="<%=rootPath%>/resources/img/logo-dark.png">
         </div>
     </form>
     <ul class="nav menu">
         <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
         <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
         <li><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
-        <li><a href="/yuncang/goods"><span class="glyphicon glyphicon-folder-close"></span> 仓库</a></li>
-        <li class="active"><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
-        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
-        <li class="parent ">
-            <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
-                                                                              class="icon pull-right"><em
-                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-            </a>
+        <li class="parent"><a href="#sub-item-1" data-toggle="collapse"><span
+                class="glyphicon glyphicon-folder-close"></span>
+            仓库<span
+                    data-toggle="collapse"
+                    href="#sub-item-1"
+                    class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
+                    <a class="" href="/yuncang/goods">
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
+                    <a class="" href="/yuncang/proffer">
+                        <span class="glyphicon glyphicon-cloud-download"></span> 供货商管理
                     </a>
                 </li>
             </ul>
         </li>
+        <li  class="active"><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+
         <li role="presentation" class="divider"></li>
-        <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+
     </ul>
     <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
     </div>
@@ -95,145 +90,34 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">Forms</li>
+            <li class="active">资金</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Forms</h1>
+            <h1 class="page-header">资金</h1>
         </div>
     </div><!--/.row-->
 
-
     <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Form Elements</div>
-                <div class="panel-body">
-                    <div class="col-md-6">
-                        <form role="form">
-
-                            <div class="form-group">
-                                <label>Text Input</label>
-                                <input class="form-control" placeholder="Placeholder">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control">
-                            </div>
-
-                            <div class="form-group checkbox">
-                                <label>
-                                    <input type="checkbox">Remember me</label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Text area</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-
-                            <label>Validation</label>
-                            <div class="form-group has-success">
-                                <input class="form-control" placeholder="Success">
-                            </div>
-                            <div class="form-group has-warning">
-                                <input class="form-control" placeholder="Warning">
-                            </div>
-                            <div class="form-group has-error">
-                                <input class="form-control" placeholder="Error">
-                            </div>
-
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="panel panel-red panel-widget">
+                <div class="row no-padding">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <em class="glyphicon glyphicon-stats glyphicon-l"></em>
                     </div>
-                    <div class="col-md-6">
-
-                        <div class="form-group">
-                            <label>Checkboxes</label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">Checkbox 1
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">Checkbox 2
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">Checkbox 3
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">Checkbox 4
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Radio Buttons</label>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                           checked>Radio Button 1
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio
-                                    Button 2
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio
-                                    Button 3
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio
-                                    Button 4
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Selects</label>
-                            <select class="form-control">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Multiple Selects</label>
-                            <select multiple class="form-control">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Submit Button</button>
-                        <button type="reset" class="btn btn-default">Reset Button</button>
+                    <div class="col-sm-9 col-lg-7 widget-right">
+                        <div class="large">￥25.2</div>
+                        <div class="text-muted">账户余额</div>
                     </div>
-                    </form>
                 </div>
             </div>
-        </div><!-- /.col-->
-    </div><!-- /.row -->
+        </div>
+    </div>
+
+
+
 
 </div><!--/.main-->
 

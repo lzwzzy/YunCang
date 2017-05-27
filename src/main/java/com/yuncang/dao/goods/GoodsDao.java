@@ -86,6 +86,16 @@ public interface GoodsDao {
     int importExcuse(@Param("goodsId") String goodsId, @Param("number") int number) throws Exception;
 
     /**
+     * 执行出货操作
+     *
+     * @param goodsId 商品id
+     * @param number  进货数量
+     * @return 受影响行数
+     * @throws Exception
+     */
+    int saleExcuse(@Param("goodsId") String goodsId, @Param("number") int number) throws Exception;
+
+    /**
      * 根据商品id查询供货商
      *
      * @param goodsId 商品id

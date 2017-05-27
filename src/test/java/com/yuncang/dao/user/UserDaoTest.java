@@ -19,6 +19,7 @@ import java.util.Map;
 @ContextConfiguration("classpath:/spring/spring-dao.xml")
 public class UserDaoTest {
 
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -49,6 +50,15 @@ public class UserDaoTest {
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
+    }
+
+    @Test
+    public void queryPersonInfoByUserName() throws Exception {
+
+        UserEntity userEntity = userDao.queryPersonInfoByUserName("blackboy");
+        System.out.println(userEntity);
+
+
     }
 
 }

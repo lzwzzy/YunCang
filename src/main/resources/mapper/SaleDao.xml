@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuncang.dao.sale.SaleDao">
+    <!-- 查询所有销售记录(分页) -->
+    <select id="queryAllSaleInfo" resultType="SaleBill">
+        SELECT
+        sale.sale_id,
+        sale.goods_id,
+        sale.sale_count,
+        sale.sale_time,
+        sale.remarks,
+        goods.goods_id "goodsbill.goods_id",
+        goods.goods_name "goodsbill.goods_name",
+        goods.goods_price "goodsbill.goods_price",
+        goods.goods_stock "goodsbill.goods_stock",
+        goods.goods_type "goodsbill.goods_type",
+        goods.state  "goodsbill.state",
+        goods.create_time "goodsbill.create_time"
+        FROM salebill AS sale
+        INNER JOIN goodsbill AS goods
+        ON sale.goods_id = goods.goods_id
+        <where>
+            <if test="isHaveTime==true">
+                sale.sale_time >= #{fromTime}
+                AND sale.sale_time <![CDATA[ <= ]]> #{toTime}
+            </if>
+        </where>
+    </select>
+    <!-- 查询最大id -->
+    <select id="maxSaleId" resultType="java.lang.String">
+        SELECT max(sale_id) FROM salebill
+    </select>
+
+    <insert id="insertSaleInfo">
+        INSERT
+        INTO salebill(
+        sale_id,
+        goods_id,
+        sale_count,
+        remarks
+        )
+        VALUES(
+        #{saleId},
+        #{goodsId},
+        #{saleCount},
+        #{remarks}
+        )
+    </insert>
+</mapper>

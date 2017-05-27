@@ -37,6 +37,13 @@
          2.允许使用"/"做整体映射
      -->
     <mvc:default-servlet-handler/>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/yuncang/index"/>
+            <bean class="com.yuncang.interceptor.MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!--3.配置jsp 显示ViewResolver-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

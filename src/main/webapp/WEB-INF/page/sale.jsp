@@ -15,6 +15,7 @@
 <html>
 <head>
     <title>销售</title>
+    <%@include file="/WEB-INF/page/common/tag.jsp" %>
     <<%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
     <%-- 表格 --%>
@@ -81,42 +82,37 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <form role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="搜索">
+            <img src="<%=rootPath%>/resources/img/logo-dark.png">
         </div>
     </form>
     <ul class="nav menu">
         <li><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
         <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
         <li class="active"><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
-        <li><a href="/yuncang/goods"><span class="glyphicon glyphicon-folder-close"></span> 仓库</a></li>
-        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
-        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
-        <li class="parent ">
-            <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
-                                                                              class="icon pull-right"><em
-                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-            </a>
+        <li class="parent"><a href="#sub-item-1" data-toggle="collapse"><span
+                class="glyphicon glyphicon-folder-close"></span>
+            仓库<span
+                    data-toggle="collapse"
+                    href="#sub-item-1"
+                    class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
+                    <a class="" href="/yuncang/goods">
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
+                    <a class="" href="/yuncang/proffer">
+                        <span class="glyphicon glyphicon-cloud-download"></span> 供货商管理
                     </a>
                 </li>
             </ul>
         </li>
+        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+
         <li role="presentation" class="divider"></li>
-        <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+
     </ul>
     <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a>
     </div>
@@ -149,22 +145,151 @@
 
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1">
-                            <h4>Tab 1</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
-                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
-                                tincidunt odio auctor. </p>
+                            <form id="toolbar" class="form-inline">
+                                <div class="form-group has-success">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="开始日期" class="form-control flat" data-input
+                                               id="date_from"> <!-- input is mandatory -->
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="结束日期" class="form-control flat" data-input
+                                               id="date_to"> <!-- input is mandatory -->
+                                    </div>
+                                </div>
+                                <button type="button" style="margin-left:10px" id="btn_query"
+                                        class="btn btn-primary">查询
+                                </button>
+                            </form>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <table id="table" data-row-style="rowStyle">
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
                         </div>
                         <div class="tab-pane fade" id="tab2">
-                            <h4>Tab 2</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
-                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
-                                tincidunt odio auctor. </p>
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        NO.${saleId}
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal" id="add_form">
+                                            <div class="form-group">
+                                                <label for="goodsName" class="col-sm-2 control-label">商品:</label>
+                                                <div class="col-sm-6">
+                                                    <select class="selectpicker" id="goodsName" data-live-search="true">
+                                                        <c:forEach var="goods" items="${goodsBills}">
+                                                            <option value="${goods.goodsId}">${goods.goodsName}(￥<p id="goodsPrice">${goods.goodsPrice}</p>)</option>
+                                                        </c:forEach>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="saleCount" class="col-sm-2 control-label">出货量:</label>
+                                                <div class="col-sm-6">
+                                                    <input name="saleCount" type="number" class="form-control"
+                                                           id="saleCount"
+                                                           placeholder="数量">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="remark" class="col-sm-2 control-label">备注</label>
+                                                <div class="col-sm-6">
+                                                <textarea name="remarks" class="form-control" id="remark"
+                                                          placeholder="请输入备注"></textarea>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="tab3">
-                            <h4>Tab 3</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec
-                                hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a
-                                tincidunt odio auctor. </p>
+                            <h4>今日数据</h4>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-teal panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">
+                                                    <a href="/yuncang/goods">${goodsBills.size()}</a>
+                                                </div>
+                                                <div class="text-muted">今日在架商品</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-blue panel-widget ">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-tag glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">${todaySaleTotalCount}</div>
+                                                <div class="text-muted">今日销量</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-red panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">￥${todaySaleTotalPrice}</div>
+                                                <div class="text-muted">今日营业额</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
+                            <h4>总数据</h4>
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-blue panel-widget ">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-tag glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">${SaleTotalCount}</div>
+                                                <div class="text-muted">销售总量</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div class="panel panel-red panel-widget">
+                                        <div class="row no-padding">
+                                            <div class="col-sm-3 col-lg-5 widget-left">
+                                                <em class="glyphicon glyphicon-usd glyphicon-l"></em>
+                                            </div>
+                                            <div class="col-sm-9 col-lg-7 widget-right">
+                                                <div class="large">￥${SaleTotalPrice}</div>
+                                                <div class="text-muted">总营业额</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
                         </div>
                     </div>
                 </div>
@@ -197,6 +322,7 @@
 <script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
 <%-- 下拉菜单插件中文组件 --%>
 <script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
+<script src="<%=rootPath%>/resources/js/sale/sale.js"></script>
 <script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {

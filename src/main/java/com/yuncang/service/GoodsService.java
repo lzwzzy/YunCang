@@ -78,6 +78,16 @@ public interface GoodsService {
     boolean importExcuse(String goodsId, int number) throws Exception;
 
     /**
+     * 执行出货操作
+     *
+     * @param goodsId 商品id
+     * @param number  进货数量
+     * @return 是否执行成功
+     * @throws Exception
+     */
+    boolean saleExcuse(String goodsId, int number) throws Exception;
+
+    /**
      * 根据商品id查询供货商
      *
      * @param goodsId 商品id

@@ -104,6 +104,17 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
+    public boolean saleExcuse(String goodsId, int number) throws Exception {
+        int isSuccess = goodsDao.saleExcuse(goodsId, number);
+        if (isSuccess > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String queryProfferId(String goodsId) throws Exception {
         String profferId = goodsDao.queryProfferId(goodsId);
         return profferId;

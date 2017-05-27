@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lumino - Dashboard</title>
+    <title>首页</title>
     <%-- 静态包含 --%>
     <%@include file="/WEB-INF/page/common/head.jsp" %>
 </head>
@@ -26,7 +26,7 @@
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                            class="glyphicon glyphicon-user"></span> ${user} <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
@@ -41,42 +41,37 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <form role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="搜索">
+            <img src="<%=rootPath%>/resources/img/logo-dark.png">
         </div>
     </form>
     <ul class="nav menu">
         <li class="active"><a href="/yuncang/index"><span class="glyphicon glyphicon-home"></span> 起始页</a></li>
         <li><a href="/yuncang/import"><span class="glyphicon glyphicon-shopping-cart"></span> 采购</a></li>
         <li><a href="/yuncang/sale"><span class="glyphicon glyphicon-tag"></span> 销售</a></li>
-        <li><a href="/yuncang/goods"><span class="glyphicon glyphicon-folder-close"></span> 仓库</a></li>
-        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
-        <li><a href="/yuncang/chart"><span class="glyphicon glyphicon-list-alt"></span> 报表</a></li>
-        <li class="parent ">
-            <a href="#">
-                <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1"
-                                                                              class="icon pull-right"><em
-                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-            </a>
+        <li class="parent"><a href="#sub-item-1" data-toggle="collapse"><span
+                class="glyphicon glyphicon-folder-close"></span>
+            仓库<span
+                    data-toggle="collapse"
+                    href="#sub-item-1"
+                    class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span></a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
+                    <a class="" href="/yuncang/goods">
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
+                    <a class="" href="/yuncang/proffer">
+                        <span class="glyphicon glyphicon-cloud-download"></span> 供货商管理
                     </a>
                 </li>
             </ul>
         </li>
+        <li><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+
         <li role="presentation" class="divider"></li>
-        <li><a href="login/login.jsp"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+
     </ul>
     <div class="attribution">More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> -
         Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
@@ -86,13 +81,13 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active">Dashboard</li>
+            <li class="active">起始页</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">云仓</h1>
         </div>
     </div><!--/.row-->
 
@@ -100,27 +95,27 @@
 
     <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="panel panel-orange panel-widget">
+                <div class="row no-padding">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <em class="glyphicon glyphicon-tasks glyphicon-l"></em>
+                    </div>
+                    <div class="col-sm-9 col-lg-7 widget-right">
+                        <div class="large"><a href="/yuncang/goods">${goodsBills.size()}</a></div>
+                        <div class="text-muted">当前在架商品</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
             <div class="panel panel-blue panel-widget ">
                 <div class="row no-padding">
                     <div class="col-sm-3 col-lg-5 widget-left">
                         <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">120</div>
-                        <div class="text-muted">采购</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-orange panel-widget">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-comment glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">52</div>
-                        <div class="text-muted">Comments</div>
+                        <div class="large"><a href="/yuncang/import">￥${todayimportTotalPrice}</a></div>
+                        <div class="text-muted">今日采购支出</div>
                     </div>
                 </div>
             </div>
@@ -129,11 +124,11 @@
             <div class="panel panel-teal panel-widget">
                 <div class="row no-padding">
                     <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-user glyphicon-l"></em>
+                        <em class="glyphicon glyphicon-tag glyphicon-l"></em>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">24</div>
-                        <div class="text-muted">New Users</div>
+                        <div class="large"><a href="/yuncang/sale">￥${todaySaleTotalPrice}</a></div>
+                        <div class="text-muted">今日营业额</div>
                     </div>
                 </div>
             </div>
@@ -145,8 +140,8 @@
                         <em class="glyphicon glyphicon-stats glyphicon-l"></em>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">25.2k</div>
-                        <div class="text-muted">Visitors</div>
+                        <div class="large">￥25.2</div>
+                        <div class="text-muted">账户余额</div>
                     </div>
                 </div>
             </div>
@@ -156,7 +151,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Site Traffic Overview</div>
+                <div class="panel-heading">近7天营业额走势</div>
                 <div class="panel-body">
                     <div class="canvas-wrapper">
                         <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
@@ -165,209 +160,18 @@
             </div>
         </div>
     </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>New Orders</h4>
-                    <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Comments</h4>
-                    <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span
-                            class="percent">65%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>New Users</h4>
-                    <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body easypiechart-panel">
-                    <h4>Visitors</h4>
-                    <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-md-8">
-
-            <div class="panel panel-default chat">
-                <div class="panel-heading" id="accordion"><span class="glyphicon glyphicon-comment"></span> Chat</div>
-                <div class="panel-body">
-                    <ul>
-                        <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">John Doe</strong>
-                                    <small class="text-muted">32 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
-                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
-                                    tortor aliquam ultricies.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix">
-								<span class="chat-img pull-right">
-									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar"
-                                         class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="pull-left primary-font">Jane Doe</strong>
-                                    <small class="text-muted">6 mins ago</small>
-                                </div>
-                                <p>
-                                    Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu
-                                    mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque
-                                    quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum
-                                    sapien.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">John Doe</strong>
-                                    <small class="text-muted">32 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum
-                                    ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida
-                                    tortor aliquam ultricies.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md"
-                               placeholder="Type your message here..."/>
-                        <span class="input-group-btn">
-								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
-							</span>
-                    </div>
-                </div>
-            </div>
-
-        </div><!--/.col-->
-
-        <div class="col-md-4">
-
-            <div class="panel panel-blue">
-                <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-check"></span>To-do List</div>
-                <div class="panel-body">
-                    <ul class="todo-list">
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Make a plan for today</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Update Basecamp</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Send email to Jane</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Drink coffee</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Do some work</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                        <li class="todo-list-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <label for="checkbox">Tidy up workspace</label>
-                            </div>
-                            <div class="pull-right action-buttons">
-                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task"/>
-                        <span class="input-group-btn">
-								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
-							</span>
-                    </div>
-                </div>
-            </div>
-
-        </div><!--/.col-->
-    </div><!--/.row-->
 </div>    <!--/.main-->
 
 
+
+</body>
+<%@include file="common/foot.jsp" %>
+<%-- 时间格式化插件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.js"></script>
+<%-- 时间格式化插件中文组件 --%>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
+<script src="<%=rootPath%>/resources/js/common/chart.min.js"></script>
+<script src="<%=rootPath%>/resources/js/common/chart-data.js"></script>
 <script>
     $('#calendar').datepicker({});
 
@@ -385,6 +189,4 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
-</body>
-<%@include file="common/foot.jsp" %>
 </html>
