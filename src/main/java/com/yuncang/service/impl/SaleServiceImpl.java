@@ -4,7 +4,6 @@ import com.github.miemiedev.mybatis.paginator.domain.Order;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.yuncang.dao.sale.SaleDao;
-import com.yuncang.entity.ImportBill;
 import com.yuncang.entity.SaleBill;
 import com.yuncang.service.SaleService;
 import com.yuncang.util.GetTodayTimeStamp;

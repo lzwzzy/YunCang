@@ -9,8 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.Calendar;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by lzw on 2017/5/22.
  */
@@ -22,6 +20,26 @@ public class ImportServiceTest {
 
     @Autowired
     private ImportService importService;
+
+    //获得当天0点时间
+    public static int getTimesmorning() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return (int) (cal.getTimeInMillis() / 1000);
+    }
+
+    //获得当天24点时间
+    public static int getTimesnight() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY, 24);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return (int) (cal.getTimeInMillis() / 1000);
+    }
 
     @Test
     public void queryAllImportInfo() throws Exception {
@@ -36,26 +54,6 @@ public class ImportServiceTest {
 
     @Test
     public void insertImportInfo() throws Exception {
-    }
-
-
-    //获得当天0点时间
-    public static int getTimesmorning(){
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        return (int) (cal.getTimeInMillis()/1000);
-    }
-    //获得当天24点时间
-    public static int getTimesnight(){
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 24);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        return (int) (cal.getTimeInMillis()/1000);
     }
 
     @Test

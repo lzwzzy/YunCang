@@ -8,8 +8,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by lzw on 2017/5/24.
  */

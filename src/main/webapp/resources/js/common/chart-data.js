@@ -1,7 +1,6 @@
-
 window.onload = function () {
-    $.post('/yuncang/chartSaleInfo',{},function (data) {
-        if (data){
+    $.post('/yuncang/chartSaleInfo', {}, function (data) {
+        if (data) {
             chart(data);
         }
     });
@@ -19,7 +18,7 @@ function chart(data) {
             moment(today).subtract(3, 'days').format('MM-DD'),
             moment(today).subtract(2, 'days').format('MM-DD'),
             moment(today).subtract(1, 'days').format('MM-DD'),
-            moment(today).format('MM-DD')+'(今天)'
+            moment(today).format('MM-DD') + '(今天)'
         ],
         datasets: [
             {

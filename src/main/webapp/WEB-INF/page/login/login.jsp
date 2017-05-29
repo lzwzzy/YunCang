@@ -69,7 +69,7 @@
                            autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="remember"><input type="checkbox" id="remember">记住我</label>
+                    <label for="remember"><input type="checkbox" id="remember">记住我(7天)</label>
                 </div>
                 <div class="form-group">
                     <p>还没有账号? <a href="/yuncang/register">注册</a> | <a href="#">忘记密码?</a></p>
@@ -95,6 +95,8 @@
 
 <!-- jQuery -->
 <script src="<%=rootPath%>/loginResource/js/jquery.min.js"></script>
+<!-- jQuery cookie操作插件 -->
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <%-- jquery-confirm弹窗插件 --%>
 <script src="https://cdn.bootcss.com/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
 <!-- Bootstrap -->

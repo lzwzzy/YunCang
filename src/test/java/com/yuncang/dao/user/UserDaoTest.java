@@ -61,4 +61,29 @@ public class UserDaoTest {
 
     }
 
+    @Test
+    public void editPersonInfoByUserId() {
+
+        int i = 0;
+        try {
+            i = userDao.editPersonInfoByUserId(2,
+                    "blackboy1",
+                    "18943212345",
+                    "",
+                    "");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.toString());
+        }
+        System.out.println(i);
+
+    }
+
+    @Test
+    public void editPassword() throws Exception {
+        int i = userDao.editPassword("blackboy1", "123");
+        System.out.println(i);
+    }
+
+
 }

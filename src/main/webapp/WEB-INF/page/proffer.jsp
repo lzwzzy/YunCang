@@ -66,12 +66,15 @@
             <a class="navbar-brand" href="#"><span>云仓</span>admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>${user}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 注销</a></li>
+                        <li><a href="javascript:;" id="personInfo"><span class="glyphicon glyphicon-user"></span>
+                            个人资料</a></li>
+                        <li><a href="javascript:;" id="setting"><span class="glyphicon glyphicon-cog"></span> 设置</a>
+                        </li>
+                        <li><a href="javascript:;" id="logout"><span class="glyphicon glyphicon-log-out"></span> 注销</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -252,6 +255,7 @@
 <%-- bootstrapTable 表内编辑插件 --%>
 <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js"></script>
 <script src="<%=rootPath%>/resources/js/proffer/proffer.js" type="text/javascript"></script>
+<script src="<%=rootPath%>/resources/js/common/user.js"></script>
 <script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {

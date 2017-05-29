@@ -151,11 +151,12 @@ public class ImportController {
 
     /**
      * 查询近7天的采购数据
+     *
      * @return 近7天的采购数据
      */
     @ResponseBody
-    @RequestMapping(value = "/chartImportInfo",method = RequestMethod.POST)
-    public Map<String, Object> queryBefore7DaysImportInfo(){
+    @RequestMapping(value = "/chartImportInfo", method = RequestMethod.POST)
+    public Map<String, Object> queryBefore7DaysImportInfo() {
         Map<String, Object> map = importService.queryaWeekImprotInfo();
         return map;
     }

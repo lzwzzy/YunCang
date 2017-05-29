@@ -34,12 +34,15 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>${user}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 注销</a></li>
+                        <li><a href="javascript:;" id="personInfo"><span class="glyphicon glyphicon-user"></span>
+                            个人资料</a></li>
+                        <li><a href="javascript:;" id="setting"><span class="glyphicon glyphicon-cog"></span> 设置</a>
+                        </li>
+                        <li><a href="javascript:;" id="logout"><span class="glyphicon glyphicon-log-out"></span> 注销</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -77,7 +80,7 @@
                 </li>
             </ul>
         </li>
-        <li  class="active"><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
+        <li class="active"><a href="/yuncang/maney"><span class="glyphicon glyphicon-usd"></span> 资金</a></li>
 
         <li role="presentation" class="divider"></li>
 
@@ -100,28 +103,41 @@
         </div>
     </div><!--/.row-->
 
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-3">
-            <div class="panel panel-red panel-widget">
-                <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <em class="glyphicon glyphicon-stats glyphicon-l"></em>
-                    </div>
-                    <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">￥25.2</div>
-                        <div class="text-muted">账户余额</div>
-                    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="panel panel-red panel-widget">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <em class="glyphicon glyphicon-stats glyphicon-l"></em>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large">￥25.2</div>
+                    <div class="text-muted">账户余额</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="panel panel-red panel-widget">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <em class="glyphicon glyphicon-stats glyphicon-l"></em>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large">￥25.2</div>
+                    <div class="text-muted">账户余额</div>
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
 </div><!--/.main-->
 
 
+</body>
+<%@include file="common/foot.jsp" %>
+<script src="<%=rootPath%>/resources/js/common/user.js"></script>
 <script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
@@ -137,6 +153,4 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
-</body>
-<%@include file="common/foot.jsp" %>
 </html>

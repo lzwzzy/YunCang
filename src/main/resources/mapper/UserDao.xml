@@ -34,6 +34,7 @@
     <!-- 根据用户名查找用户个人信息 -->
     <select id="queryPersonInfoByUserName" resultType="UserEntity">
         SELECT
+        userid,
         username,
         phone,
         sex,
@@ -42,4 +43,22 @@
         FROM user
         WHERE username=#{username}
     </select>
+
+    <!-- 修改个人资料 -->
+    <update id="editPersonInfoByUserId">
+        UPDATE user
+        SET
+        username = #{username},
+        phone = #{userphone},
+        email = #{useremail},
+        sex = #{sex}
+        WHERE userid = #{userid}
+    </update>
+
+    <update id="editPassword">
+        UPDATE user
+        SET
+        password = #{newPassword}
+        WHERE username = #{username}
+    </update>
 </mapper>

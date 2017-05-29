@@ -172,7 +172,7 @@ var sale = {
                     field: 'saleCount',
                     title: '数量',
                     align: 'center'
-                },  {
+                }, {
                     field: 'saleTime',
                     title: '售出时间',
                     align: 'center',

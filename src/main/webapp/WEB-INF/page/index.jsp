@@ -25,12 +25,15 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                            class="glyphicon glyphicon-user"></span> ${user} <span class="caret"></span></a>
+                    <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>${user}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 注销</a></li>
+                        <li><a href="javascript:;" id="personInfo"><span class="glyphicon glyphicon-user"></span>
+                            个人资料</a></li>
+                        <li><a href="javascript:;" id="setting"><span class="glyphicon glyphicon-cog"></span> 设置</a>
+                        </li>
+                        <li><a href="javascript:;" id="logout"><span class="glyphicon glyphicon-log-out"></span> 注销</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -163,7 +166,6 @@
 </div>    <!--/.main-->
 
 
-
 </body>
 <%@include file="common/foot.jsp" %>
 <%-- 时间格式化插件 --%>
@@ -172,9 +174,8 @@
 <script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
 <script src="<%=rootPath%>/resources/js/common/chart.min.js"></script>
 <script src="<%=rootPath%>/resources/js/common/chart-data.js"></script>
+<script src="<%=rootPath%>/resources/js/common/user.js"></script>
 <script>
-    $('#calendar').datepicker({});
-
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");

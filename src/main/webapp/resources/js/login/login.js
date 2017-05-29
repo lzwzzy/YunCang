@@ -74,8 +74,8 @@ var login = {
                 if (bootstrapValidator.isValid()) {
                     //向服务器发送ajax请求
                     $.post(login.URL.dologin(), {
-                        username: $('#username').val(),
-                        password: $('#password').val()
+                        username: username,
+                        password: password
                     }, function (result) {
                         //结果判断
                         if (result && result['success']) {
@@ -90,9 +90,13 @@ var login = {
                                     }, 1000);//1秒后消失
                                 }
                             });
+                            //判断是否点击记住我,如果点击则写入cookie
+                            if ($('#remember').is(':checked')) {
+                                $.cookie('username', username, {expires: 7, path: '/yuncang'});
+                            }
                             setTimeout(function () {
                                 window.location.href = login.URL.index();
-                            },1500);//1.5秒后进入主界面
+                            }, 1500);//1.5秒后进入主界面
                         } else {
                             //验证失败时，弹出提示
                             var jc2 = $.dialog({

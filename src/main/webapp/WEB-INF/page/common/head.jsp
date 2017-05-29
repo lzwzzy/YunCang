@@ -7,7 +7,6 @@
   系统界面头部公用文件引用
 --%>
 
-
 <meta charset="utf-8">
 <%-- 移动设备优先 --%>
 <meta name="viewport" content="width=device-width, initial-scale=1">

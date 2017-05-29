@@ -158,7 +158,7 @@ var register = {
                             //并且在3秒后跳转到登陆页面
                             //每秒执行一次,showTime()
                             window.setInterval("register.showTime()", 1000);
-                        }else {
+                        } else {
                             //验证失败时，弹出提示
                             var jc2 = $.dialog({
                                 icon: 'glyphicon glyphicon-remove-sign',

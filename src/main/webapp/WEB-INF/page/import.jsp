@@ -66,12 +66,15 @@
             <a class="navbar-brand" href="#"><span>云仓</span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                            class="glyphicon glyphicon-user"></span> 用户 <span class="caret"></span></a>
+                    <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>${user}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 注销</a></li>
+                        <li><a href="javascript:;" id="personInfo"><span class="glyphicon glyphicon-user"></span>
+                            个人资料</a></li>
+                        <li><a href="javascript:;" id="setting"><span class="glyphicon glyphicon-cog"></span> 设置</a>
+                        </li>
+                        <li><a href="javascript:;" id="logout"><span class="glyphicon glyphicon-log-out"></span> 注销</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -328,8 +331,8 @@
 <script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.js"></script>
 <%-- 下拉菜单插件中文组件 --%>
 <script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/i18n/defaults-zh_CN.js"></script>
-
 <script src="<%=rootPath%>/resources/js/import/import.js" type="text/javascript"></script>
+<script src="<%=rootPath%>/resources/js/common/user.js"></script>
 <script>
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {

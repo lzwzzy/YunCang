@@ -39,17 +39,24 @@ public class RegisterController {
     @RequestMapping(value = "/doregister", method = RequestMethod.POST)
     @ResponseBody
     public Result<Boolean> doRegister(UserEntity user) {
-        int state = service.insertUser(user);
-        if (user == null) {
-            return new Result<Boolean>(false);
-        } else {
-            //如果返回为1，证明插入成功
-            if (state == 1) {
-                return new Result<Boolean>(true);
-            } else {
+        int state = 0;
+        try {
+            state = service.insertUser(user);
+            if (user == null) {
                 return new Result<Boolean>(false);
+            } else {
+                //如果返回为1，证明插入成功
+                if (state == 1) {
+                    return new Result<Boolean>(true);
+                } else {
+                    return new Result<Boolean>(false);
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result<Boolean>(false);
         }
+
     }
 
     /**

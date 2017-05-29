@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
 
-    public boolean loginCheck(String user_name, String user_password) {
+    public boolean loginCheck(String user_name, String user_password) throws Exception {
         if (user_name != null && user_password != null) {
             UserEntity userEntity = userDao.loginCheck(user_name, user_password);
             if (userEntity != null) {
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public int insertUser(UserEntity user) {
+    public int insertUser(UserEntity user) throws Exception {
         int state = userDao.insertUser(user);
         return state;
     }
@@ -59,6 +59,33 @@ public class UserServiceImpl implements UserService {
             }
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
+            return false;
+        }
+
+    }
+
+    @Override
+    public UserEntity queryPersonInfoByUserName(String username) throws Exception {
+        return userDao.queryPersonInfoByUserName(username);
+    }
+
+    @Override
+    public boolean editPersonInfo(int id, String username, String userphone, String useremail, String sex) throws Exception {
+
+        int isSuccess = userDao.editPersonInfoByUserId(id, username, userphone, useremail, sex);
+        if (isSuccess > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean editPassword(String username, String newPassword) throws Exception {
+        int isSuccess = userDao.editPassword(username, newPassword);
+        if (isSuccess > 0) {
+            return true;
+        } else {
             return false;
         }
 

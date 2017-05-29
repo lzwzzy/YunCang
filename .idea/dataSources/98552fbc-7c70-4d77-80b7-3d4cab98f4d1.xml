@@ -276,36 +276,28 @@
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="60" parent="16" name="user_phone_uindex">
-      <ColNames>phone</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="61" parent="16" name="user_username_uindex">
+    <index id="60" parent="16" name="user_username_uindex">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="62" parent="16" name="user_userid_uindex">
+    <index id="61" parent="16" name="user_userid_uindex">
       <ColNames>userid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="63" parent="16" name="PRIMARY">
+    <key id="62" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="64" parent="16" name="user_userid_uindex">
+    <key id="63" parent="16" name="user_userid_uindex">
       <ColNames>userid</ColNames>
       <UnderlyingIndexName>user_userid_uindex</UnderlyingIndexName>
     </key>
-    <key id="65" parent="16" name="user_username_uindex">
+    <key id="64" parent="16" name="user_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_username_uindex</UnderlyingIndexName>
     </key>
-    <key id="66" parent="16" name="user_phone_uindex">
-      <ColNames>phone</ColNames>
-      <UnderlyingIndexName>user_phone_uindex</UnderlyingIndexName>
-    </key>
-    <key id="67" parent="16" name="user_email_uindex">
+    <key id="65" parent="16" name="user_email_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>user_email_uindex</UnderlyingIndexName>
     </key>

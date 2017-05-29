@@ -68,7 +68,8 @@ public interface ImportService {
 
     /**
      * 查询近7天的采购数据
+     *
      * @return 近7天的数据
      */
-    Map<String,Object> queryaWeekImprotInfo();
+    Map<String, Object> queryaWeekImprotInfo();
 }

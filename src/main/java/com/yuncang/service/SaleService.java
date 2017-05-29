@@ -64,7 +64,8 @@ public interface SaleService {
 
     /**
      * 查询近7天的销售数据数据
+     *
      * @return 近7天的数据
      */
-    Map<String,Object> queryaWeekSaleInfo() throws Exception;
+    Map<String, Object> queryaWeekSaleInfo() throws Exception;
 }

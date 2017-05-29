@@ -16,7 +16,7 @@
         goods.goods_price "goodsbill.goods_price",
         goods.goods_stock "goodsbill.goods_stock",
         goods.goods_type "goodsbill.goods_type",
-        goods.state  "goodsbill.state",
+        goods.state "goodsbill.state",
         goods.create_time "goodsbill.create_time"
         FROM salebill AS sale
         INNER JOIN goodsbill AS goods

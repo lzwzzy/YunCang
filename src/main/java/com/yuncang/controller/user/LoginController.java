@@ -36,14 +36,21 @@ public class LoginController {
      */
     @RequestMapping(value = "/dologin", method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean> dologin(HttpSession session,HttpServletRequest request,String username, String password) {
+    public Result<Boolean> dologin(HttpSession session, HttpServletRequest request, String username, String password) {
 
-        boolean islogin = service.loginCheck(username, password);
-        if (islogin) {
-            session = request.getSession();
-            session.setAttribute("user",username);
-            return new Result<Boolean>(true);
+        boolean islogin = false;
+        try {
+            islogin = service.loginCheck(username, password);
+            if (islogin) {
+                session = request.getSession();
+                session.setAttribute("user", username);
+                return new Result<Boolean>(true);
+            }
+            return new Result<Boolean>(false, "用户名或密码错误");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result<Boolean>(false, "数据异常");
         }
-        return new Result<Boolean>(false, "用户名或密码错误");
+
     }
 }
