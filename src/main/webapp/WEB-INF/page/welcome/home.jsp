@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Learn &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+    <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by freehtml5.co"/>
     <meta name="keywords"
@@ -55,6 +55,12 @@
 
     <!-- Modernizr JS -->
     <script src="<%=rootPath%>/welcomeResource/js/modernizr-2.6.2.min.js"></script>
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="<%=rootPath%>/resources/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<%=rootPath%>/resources/img/favicon.png">
+
+
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="/welcomeResource/js/respond.min.js"></script>
