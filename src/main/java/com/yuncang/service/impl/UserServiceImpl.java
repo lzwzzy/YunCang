@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
+    @Transactional
     public int insertUser(UserEntity user) throws Exception {
         int state = userDao.insertUser(user);
         return state;
@@ -70,6 +72,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean editPersonInfo(int id, String username, String userphone, String useremail, String sex) throws Exception {
 
         int isSuccess = userDao.editPersonInfoByUserId(id, username, userphone, useremail, sex);
@@ -81,6 +84,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean editPassword(String username, String newPassword) throws Exception {
         int isSuccess = userDao.editPassword(username, newPassword);
         if (isSuccess > 0) {

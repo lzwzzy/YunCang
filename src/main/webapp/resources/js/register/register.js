@@ -132,10 +132,10 @@ var register = {
                 var phone = $('#phone').val();
                 var username = $('#username').val();
                 var password = $('#password').val();
-                var repassword = $('#password_confirm').val();
+                var repassword = $('#repassword').val();
                 var successModel = $('#successModal');
                 //获取表单验证对象
-                var bootstrapValidator = $("#add_from").data('bootstrapValidator');
+                var bootstrapValidator = $('form').data('bootstrapValidator');
                 //执行验证
                 bootstrapValidator.validate();
                 //如果验证通过...

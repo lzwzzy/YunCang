@@ -9,6 +9,7 @@ import com.yuncang.service.ImportService;
 import com.yuncang.util.GetTodayTimeStamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -59,6 +60,7 @@ public class ImportServiceImpl implements ImportService {
     }
 
     @Override
+    @Transactional
     public boolean insertImportInfo(String importId, String goodsId, String profferId, String importPrice, String importCount, String remarks) throws Exception {
         int isSuccess = importDao.insertImportInfo(importId, goodsId, profferId, importPrice, importCount, remarks);
         if (isSuccess > 0) {

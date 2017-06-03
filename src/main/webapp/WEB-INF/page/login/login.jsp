@@ -56,7 +56,7 @@
 
 
             <!-- Start Sign In Form -->
-            <form id="login_form" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+            <form id="login_form" class="fh5co-form animate-box" data-animate-effect="fadeIn" method="post">
                 <h2>登陆</h2>
                 <div class="form-group">
                     <label for="username" class="sr-only">用户名</label>
@@ -75,9 +75,7 @@
                     <p>还没有账号? <a href="/yuncang/register">注册</a> | <a href="#">忘记密码?</a></p>
                 </div>
                 <div class="form-group">
-                    <button id="loginBtn" type="button" class="btn btn-primary">
-                        登陆
-                    </button>
+                    <input id="loginBtn" type="button" value="登陆" class="btn btn-primary">
                 </div>
             </form>
             <!-- END Sign In Form -->

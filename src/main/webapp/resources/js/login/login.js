@@ -119,6 +119,13 @@ var login = {
 
             });
 
+            $(document).keyup(function(event){
+                if(event.keyCode ===13){
+                    $('#loginBtn').click();
+                    return false;
+                }
+            });
+
 
         }
     }

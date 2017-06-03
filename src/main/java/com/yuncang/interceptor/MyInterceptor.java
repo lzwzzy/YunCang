@@ -24,7 +24,7 @@ public class MyInterceptor implements HandlerInterceptor {
             if (c.getName().equals("username")) {
                 userCookie = c.getValue();
                 if (userCookie != null) {
-                    return true;
+                    userSession = userCookie;
                 }
             }
         }
@@ -41,8 +41,6 @@ public class MyInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object o, ModelAndView modelAndView) throws Exception {
         if (userSession != null) {
             modelAndView.addObject("user", userSession);
-        } else {
-            modelAndView.addObject("user", userCookie);
         }
     }
 

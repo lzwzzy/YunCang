@@ -57,10 +57,10 @@
 
 
             <!-- Start Sign In Form -->
-            <form class="fh5co-form animate-box" data-animate-effect="fadeIn">
+            <form id="add_from" class="fh5co-form animate-box" data-animate-effect="fadeIn">
                 <h2>新用户注册</h2>
 
-                <div id="add_from" class="form-group">
+                <div  class="form-group">
                     <label for="username" class="sr-only">用户名</label>
                     <input name="username" type="text" class="form-control" id="username" placeholder="用户名"
                            autocomplete="off">

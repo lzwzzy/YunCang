@@ -9,6 +9,7 @@ import com.yuncang.service.SaleService;
 import com.yuncang.util.GetTodayTimeStamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -57,6 +58,7 @@ public class SaleServiceImpl implements SaleService {
     }
 
     @Override
+    @Transactional
     public boolean insertSaleInfo(String saleId, String goodsId, String saleCount, String remarks) throws Exception {
         int isSuccess = saleDao.insertSaleInfo(saleId, goodsId, saleCount, remarks);
         if (isSuccess > 0) {
