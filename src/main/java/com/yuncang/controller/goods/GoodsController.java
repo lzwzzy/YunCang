@@ -109,6 +109,7 @@ public class GoodsController {
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "插入失败");
+
         }
 
     }

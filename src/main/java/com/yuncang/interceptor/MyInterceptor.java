@@ -25,6 +25,7 @@ public class MyInterceptor implements HandlerInterceptor {
                 userCookie = c.getValue();
                 if (userCookie != null) {
                     userSession = userCookie;
+                    request.getSession().setAttribute("user",userSession);
                 }
             }
         }
