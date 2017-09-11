@@ -33,9 +33,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.webjars.bower:jquery:3.2.1" />
           <element id="library" level="project" name="Maven: com.github.miemiedev:mybatis-paginator:1.2.17" />
-          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC2" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC3" />
           <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.0.0-RC1" />
-          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC2" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
