@@ -14,12 +14,12 @@
         <repository>
             <id>central</id>
             <name>DESKTOP-99GG2FR-releases</name>
-            <url>http://localhost:8081/artifactory/lzw</url>
+            <url>https://localhost:8081/artifactory/lzw</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>DESKTOP-99GG2FR-snapshots</name>
-            <url>http://localhost:8081/artifactory/lzw</url>
+            <url>https://localhost:8081/artifactory/lzw</url>
         </snapshotRepository>
     </distributionManagement>
 
